@@ -82,6 +82,15 @@ header > h1 {
 	width: 90%;
 }
 
+.input:hover {
+	border-color: #45445a;
+}
+
+.input:focus {
+	outline: none !important;
+	border-color: #96d019;
+}
+
 .messageBox {
 	min-height: 8em;
 }

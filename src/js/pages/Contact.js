@@ -8,6 +8,10 @@ export default class Contact extends React.Component {
   	const locationHeaderStyle = {
   		marginBottom: "0.5em"
   	}
+  	const phoneHeaderStyle = {
+  		marginTop: "0",
+  		marginBottom: "0.5em"
+  	}
   	const name = "Huashing Acupuncture & Chinese Medicine";
   	const street1 = "10630 N 71st PL";
   	const number1 = "Suite 1";
@@ -25,7 +29,8 @@ export default class Contact extends React.Component {
   	          <ContactForm> </ContactForm>
   	        </Column>
   	        <Column width="1/2">
-  	          // Location, phone number, hours
+  	          <h4 style={phoneHeaderStyle}>Phone</h4>
+  	          (480) 951-5785 
   	          <h4 style={locationHeaderStyle}>Location</h4>
   	          <Address name={name} street={street1} number={number1} cityStateZip={cityStateZip1} > </Address>
 

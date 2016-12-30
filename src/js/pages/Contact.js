@@ -1,4 +1,5 @@
 import React from "react";
+import Address from "../components/Address";
 import {Grid, Row, Column} from 'react-cellblock';
 
 export default class Contact extends React.Component {
@@ -9,10 +10,15 @@ export default class Contact extends React.Component {
       	<Grid>
   	      <Row>
   	        <Column width="1/2">
-  	          Left!
+  	          // Contact form
   	        </Column>
   	        <Column width="1/2">
-  	          Right!
+  	          // Location, phone number, hours
+  	          <h4>Location</h4>
+  	          <Address> </Address>
+
+  	          <h4>Additional Location</h4>
+
   	        </Column>
   	      </Row>
       	</Grid>

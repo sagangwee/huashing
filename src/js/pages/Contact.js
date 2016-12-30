@@ -4,6 +4,17 @@ import {Grid, Row, Column} from 'react-cellblock';
 
 export default class Contact extends React.Component {
   render() {
+  	const locationHeaderStyle = {
+  		marginBottom: "0.5em"
+  	}
+  	const name = "Huashing Acupuncture & Chinese Medicine";
+  	const street1 = "10630 N 71st PL";
+  	const number1 = "Suite 1";
+  	const cityStateZip1 = "Scottsdale, Arizona 85254";
+	const street2 = "4425E Agave Rd";
+  	const number2 = "Suite 106";
+  	const cityStateZip2 = "Phoenix, Arizona 85044";
+
     return (
       <div>
       	<h1>Contact</h1>
@@ -14,10 +25,11 @@ export default class Contact extends React.Component {
   	        </Column>
   	        <Column width="1/2">
   	          // Location, phone number, hours
-  	          <h4>Location</h4>
-  	          <Address> </Address>
+  	          <h4 style={locationHeaderStyle}>Location</h4>
+  	          <Address name={name} street={street1} number={number1} cityStateZip={cityStateZip1} > </Address>
 
-  	          <h4>Additional Location</h4>
+  	          <h4 style={locationHeaderStyle}>Additional Location</h4>
+  	          <Address name={name} street={street2} number={number2} cityStateZip={cityStateZip2} > </Address>
 
   	        </Column>
   	      </Row>

@@ -9,9 +9,9 @@ export default class Address extends React.Component {
 
     return (
       <div>
-        <span> { name } </span>
-        <span> { street } </span>
-        <span> { number } </span>
+        <span> { name } </span><br/>
+        <span> { street } </span><br/>
+        <span> { number } </span><br/>
         <span> { cityStateZip } </span>
       </div>
     );

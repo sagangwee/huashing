@@ -71,6 +71,20 @@ header > h1 {
 	text-decoration: underline !important;
 }
 
+.input {
+	border: solid 1px;
+	border-color: #dedede;
+	border-radius: 5px;
+	color: #8a8a8a;
+	margin-bottom: 1em;
+	padding: 0.85em 1.15em;
+	width: 90%;
+}
+
+.messageBox {
+	min-height: 8em;
+}
+
 
 footer > p {
 	text-align: center;

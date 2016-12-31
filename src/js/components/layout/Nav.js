@@ -25,7 +25,7 @@ export default class Nav extends React.Component {
 
   handleScroll(event) {
       let scrollTop = event.srcElement.body.scrollTop;
-      if (scrollTop > 85) {
+      if (scrollTop > 146.7) {
         this.setState({
           fixed: true
         });

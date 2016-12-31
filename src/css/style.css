@@ -73,7 +73,19 @@ header > h1 {
     top: 0;
     border-bottom: 2px solid;
     border-top: none;
+    animation: slide 0.25s linear;
 }
+
+@keyframes slide {
+	0% {
+		margin-top: -61.7px;
+	}
+
+	100% {
+		margin-top: 0px;
+	}
+}
+
 
 .active > a, .nav > li > a:hover {
 	color: #78c272 !important;

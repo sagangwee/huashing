@@ -66,6 +66,11 @@ header > h1 {
 	margin-left: .88em;
 } 
 
+.nav-fixed {
+	position: fixed;
+	background-color: #fff;
+}
+
 .active > a, .nav > li > a:hover {
 	color: #78c272 !important;
 	text-decoration: underline !important;

@@ -6,6 +6,7 @@ export default class Nav extends React.Component {
     super()
     this.state = {
       collapsed: true,
+      fixed: false
     };
   }
 
@@ -14,19 +15,43 @@ export default class Nav extends React.Component {
     this.setState({collapsed});
   }
 
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  componentWillUnmount() {
+      window.removeEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  handleScroll(event) {
+      let scrollTop = event.srcElement.body.scrollTop;
+      if (scrollTop > 85) {
+        this.setState({
+          fixed: true
+        });
+      } else {
+        this.setState({
+          fixed: false
+        });
+      }
+  }
+
   render() {
     const { location } = this.props;
     const { collapsed } = this.state;
+    const { fixed } = this.state;
     const featuredClass = location.pathname === "/" ? "active" : "";
     const aboutClass = location.pathname.match(/^\/about/) ? "active" : "";
     const treatmentsClass = location.pathname.match(/^\/treatments/) ? "active" : "";
     const financesClass = location.pathname.match(/^\/finances/) ? "active" : "";
     const testimonialsClass = location.pathname.match(/^\/testimonials/) ? "active" : "";
     const contactClass = location.pathname.match(/^\/contact/) ? "active" : "";
-    const navClass = collapsed ? "collapse" : "";
+    const navClasses = ["navbar"];
+    if (collapsed) { navClasses.push('collapse'); }
+    if (fixed) { navClasses.push('nav-fixed'); }
 
     return (
-      <nav class={"navbar " + navClass}>
+      <nav class={navClasses.join(' ')}>
         <ul class="nav">
           <li class={featuredClass}>
             <IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>Home</IndexLink>

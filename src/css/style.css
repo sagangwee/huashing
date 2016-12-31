@@ -87,7 +87,11 @@ header > h1 {
 }
 
 
-.active > a, .nav > li > a:hover {
+.active > a {
+	color: #78c272 !important;
+}
+
+.nav > li > a:hover {
 	color: #78c272 !important;
 	text-decoration: underline !important;
 }

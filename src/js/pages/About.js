@@ -5,7 +5,7 @@ export default class About extends React.Component {
     return (
 		<div>
 			<h1>About</h1>
-			<div>
+			<div class="about-container">
 				<div class="name-module">
 					<img src={require("./../../assets/huawang.jpg")} class="huawang"/>
 					<div class="title-module">
@@ -14,9 +14,19 @@ export default class About extends React.Component {
 					</div>
 				</div>
 				<div class="summary-module">
-					<p>Hua Wang is an expert in TCM (Traditional Chinese Medicine) and acupuncture. 
+					<h2 class="tagline"> Quality. Love. Responsibility.</h2>
+					<p>Hua Wang is an expert in TCM (Traditional Chinese Medicine) and acupuncture specializing in pain and stress management. 
 					She graduated from Cheng Du University of Traditional Chinese Medicine in China after 5 years of study. 
 					Hua Wang has been practicing acupuncture and TCM since 1993. </p>
+				</div>
+				<div class="qualifications-module">
+					<h2 class="qualifications-header">Qualifications</h2>
+					<p>
+					<strong class="bold-brown">Years in Practice:</strong> 20+ Years <br/>
+					<strong class="bold-brown">School:</strong> Cheng Du University of TCM <br/>
+					<strong class="bold-brown">Year Graduated:</strong> 1993 <br/>
+					<strong class="bold-brown">License No. and State:</strong> 0438 Arizona
+					</p>
 				</div>
 			</div>
 		</div>

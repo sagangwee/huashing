@@ -101,11 +101,17 @@ header > h1 {
 	text-decoration: underline !important;
 }
 
+.about-container {
+	position: relative;
+    overflow: hidden;
+    height: 65vh;
+}
+
 .name-module {
 	background-color: #4F7F4B;
     width: 42%;
-    height: 224px;
-    position: relative;
+    height: 30vh;
+    position: absolute;
     display: inline-block;
     float: left;
     box-sizing: border-box;
@@ -129,15 +135,49 @@ header > h1 {
 }
 
 .summary-module {
+	position: absolute;
 	background-color: #B28160;
     width: 55%;
-    height: 224px;
+    height: 60vh;
     display: inline-block;
     margin-left: 2vw;
     padding: 30px 40px;
     color: white;
     box-sizing: border-box;
     font-size: 18px;
+    right: 0;
+    top: 2vh;
+}
+
+.tagline {
+	margin-top: 4vh;
+}
+
+.qualifications-module {
+	width: 42%;
+	height: 30vh;
+	background-color: #41342a !important;
+	color: white;
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	padding: 20px 30px;
+	box-sizing: border-box;
+}
+
+.qualifications-header {
+	margin-top: 2vh;
+	margin-bottom: -1vh;
+}
+
+.bold-brown {
+	color: #a67f4e;
+}
+
+.vertical-center {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .input {

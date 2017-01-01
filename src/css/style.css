@@ -6,6 +6,11 @@ body {
     margin: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Source Sans Pro', sans-serif;
+	margin-top: 0;
+}
+
 header {
 	text-align: center;
 }
@@ -74,6 +79,7 @@ header > h1 {
     border-bottom: 2px solid;
     border-top: none;
     animation: slide 0.25s linear;
+    z-index: 10000;
 }
 
 @keyframes slide {
@@ -86,7 +92,6 @@ header > h1 {
 	}
 }
 
-
 .active > a {
 	color: #78c272 !important;
 }
@@ -94,6 +99,45 @@ header > h1 {
 .nav > li > a:hover {
 	color: #78c272 !important;
 	text-decoration: underline !important;
+}
+
+.name-module {
+	background-color: #4F7F4B;
+    width: 42%;
+    height: 224px;
+    position: relative;
+    display: inline-block;
+    float: left;
+    box-sizing: border-box;
+}
+
+.huawang {
+	position: absolute;
+	top: calc(50% - 75px);
+	left: 1.5vw;
+}
+
+.title-module {
+	position: absolute;
+	top: calc(50% - 40px);
+	left: 12vw;
+	color: white;
+}
+
+.headline-module {
+	margin-top: -20px;
+}
+
+.summary-module {
+	background-color: #B28160;
+    width: 55%;
+    height: 224px;
+    display: inline-block;
+    margin-left: 2vw;
+    padding: 30px 40px;
+    color: white;
+    box-sizing: border-box;
+    font-size: 18px;
 }
 
 .input {

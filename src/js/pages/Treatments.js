@@ -83,7 +83,6 @@ export default class Treatments extends React.Component {
 		            <li>Stress</li>
 		            <li>Urology</li> 
 		            <li>Weight Loss</li>
-		            <li>Wellness</li>
 		        </ul>
   	        </Column>
   	      </Row>

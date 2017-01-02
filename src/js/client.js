@@ -10,7 +10,7 @@ import Layout from "./pages/Layout";
 import Contact from "./pages/Contact";
 import Treatments from "./pages/Treatments";
 
-require('./stylesheets/main.scss');
+import style from '../stylesheets/main.scss';
 
 const app = document.getElementById('app');
 

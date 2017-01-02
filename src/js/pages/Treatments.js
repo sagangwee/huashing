@@ -10,7 +10,7 @@ export default class Treatments extends React.Component {
         <h2>Traditional Chinese Medicine</h2>
         <p>
           Traditional Chinese Medicine (TCM) is rooted in the ancient philosophy of Taoism and dates back more than 2,500 years.
-          Traditional Chinese Medicine encompasses many different practices, including acupuncture, moxibustion, Chinese herbal medicine, tui na, dietary therapy, tai chi and qi gong.
+          Traditional Chinese Medicine encompasses many different practices, including acupuncture, moxibustion, Chinese herbal medicine, tui na, dietary therapy, tai chi and qigong.
           In the United States, some 10,000 practitioners serve more than 1 million patients each year.
         </p>
 
@@ -85,6 +85,34 @@ export default class Treatments extends React.Component {
 		            <li>Weight Loss</li>
 		        </ul>
   	        </Column>
+  	      </Row>
+      	</Grid>
+
+      	<h2>Treatment Preferences</h2>
+      	<Grid>
+  	      <Row>
+  	        <Column width="1/2">
+  	        	<h3>Style/Type</h3>
+	  	        <ul>
+		        	<li>Auricular Acupuncture</li>                 
+		            <li>Chinese Acupuncture</li>
+		            <li>Five Element Acupuncture</li>
+		            <li>Trigger Point Acupuncture</li> 
+		        </ul>
+  	        </Column>
+
+  	        <Column width="1/2">
+  	        	<h3>Treatment Techniques</h3>
+	  	        <ul>
+		            <li>Cupping</li>
+		            <li>Electro acupuncture</li>
+		            <li>Gua Sha</li>
+		            <li>Herbal Medicine</li>   
+		            <li>Moxibustion</li>
+		            <li>Qigong</li>          
+		        </ul>
+  	        </Column>
+
   	      </Row>
       	</Grid>
       </div>

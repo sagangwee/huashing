@@ -18,6 +18,10 @@ module.exports = {
         }
       },
       {
+        test: /\.scss$/,
+        loaders: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
             'url?limit=8192',

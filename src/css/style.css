@@ -8,7 +8,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Source Sans Pro', sans-serif;
-	margin-top: 0;
+	margin: 0;
+}
+
+.page-title {
+	margin-bottom: 2vh;
 }
 
 header {
@@ -36,53 +40,6 @@ header > h1 {
 	top: 50%;
 	transform: translateY(-50%);
 }
-
-.input {
-	border: solid 1px;
-	border-color: #dedede;
-	border-radius: 5px;
-	color: #8a8a8a;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	margin-bottom: 1em;
-	padding: 0.85em 1.15em;
-	width: 90%;
-}
-
-.input:hover {
-	border-color: #45445a;
-}
-
-.input:focus {
-	outline: none !important;
-	border-color: #96d019;
-}
-
-.messageBox {
-	min-height: 8em;
-}
-
-.button {
-	color: #fff;
-	background-color: #96d019;
-    border-color: #96d019;
-	border-radius: 31px;
-	border-width: 4px;
-	display: inline-block;
-	text-align: center;
-	transition: all 0.25s ease-in;
-	border-width: 4px;
-	padding: 1em 2em;
-	text-decoration: none;
-	outline: none;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	cursor: pointer;
-}
-
-.button:hover {
-	background-color: #75a214;
-    border-color: #6f9912;
-}
-
 
 footer > p {
 	text-align: center;

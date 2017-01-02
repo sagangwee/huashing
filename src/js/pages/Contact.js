@@ -22,7 +22,7 @@ export default class Contact extends React.Component {
 
     return (
       <div>
-      	<h1>Contact</h1>
+      	<h1 class="page-title">Contact</h1>
       	<Grid>
   	      <Row>
   	        <Column width="1/2">

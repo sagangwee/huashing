@@ -22,7 +22,7 @@ export default class Testimonials extends React.Component {
 
     return (
       <div>
-        <h1>Testimonials</h1>
+        <h1 class="page-title">Testimonials</h1>
         article: {article}, date: {date}, filter: {filter}
         <div class="row">{Articles}</div>
       </div>

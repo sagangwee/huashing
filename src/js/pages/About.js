@@ -4,7 +4,7 @@ export default class About extends React.Component {
   render() {
     return (
 		<div>
-			<h1>About</h1>
+			<h1 class="page-title">About</h1>
 			<div class="about-container">
 				<div class="name-module">
 					<img src={require("./../../assets/huawang.jpg")} class="huawang"/>

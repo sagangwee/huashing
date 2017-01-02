@@ -53,13 +53,13 @@
 .insurance {
 	@extend .finance-module;
 	width: 90%;
-	height: 65vh;
-	padding: 6vh 4vw;
+	height: 75vh;
+	padding: 8vh 4vw;
 }
 
 .logo {
 	width: 10vw;
-	margin-top: 3vh;
+	margin-top: 4vh;
 	margin-right: 2vw;
 
 	&:first-child {

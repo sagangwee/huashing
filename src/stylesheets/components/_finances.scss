@@ -1,0 +1,53 @@
+.finance-section {
+	border-bottom: 1px solid #eee;
+	padding-bottom: 4vh;
+	margin-top: 2vh;
+
+	&:first-child {
+		margin: 0;
+	}
+}
+
+.finance-module {
+	border: 2px solid rgba(21,39,68,.1);
+	box-sizing: border-box;
+	margin: 0 auto;
+	margin-top: 2vh;
+	padding: 4vh 4vw;
+}
+
+.price {
+	@extend .finance-module;
+	width: 60%;
+	height: 25vh;
+	text-align: center;
+	font-size: 64px;
+	color: #78c272;
+}
+
+.payment-methods {
+	@extend .finance-module;
+	width: 90%;
+	height: 30vh;
+}
+
+.finance-img {
+	max-width: 60%;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 3vh;
+}
+
+.mastercard {
+	max-width: 50%;
+}
+
+.visa {
+	max-width: 40%;
+}
+
+.insurance {
+	@extend .finance-module;
+	width: 90%;
+	height: 60vh;
+}

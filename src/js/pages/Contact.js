@@ -6,7 +6,8 @@ import {Grid, Row, Column} from 'react-cellblock';
 export default class Contact extends React.Component {
   render() {
   	const locationHeaderStyle = {
-  		marginBottom: "0.5em"
+  		marginBottom: "0.5em",
+  		marginTop: "1em"
   	}
   	const phoneHeaderStyle = {
   		marginTop: "0",

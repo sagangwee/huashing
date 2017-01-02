@@ -39,7 +39,42 @@ export default class Finances extends React.Component {
 
           <div class="finance-section">
             <h2 class="center-text">Accepted Insurance Plans</h2>
-            <div class="insurance"></div>
+            <div class="insurance">
+            	<Grid>
+		  	      <Row>
+		  	        <Column width="1/4">
+		  	        	<div class="logo"><img src={require("./../../assets/insurance/aetna.png")}/></div>
+		            	<div class="logo"><img src={require("./../../assets/insurance/amerigroup.png")}/></div>
+		            	<div class="logo"><img src={require("./../../assets/insurance/amerihealth.png")}/></div>
+		            	<div class="logo"><img src={require("./../../assets/insurance/anthem.jpg")}/></div>
+		            	<div class="logo"><img src={require("./../../assets/insurance/beech-street.png")}/></div>
+		  	        </Column>
+
+		  	        <Column width="1/4">
+		  	        	<div class="logo"><img src={require("./../../assets/insurance/blue.png")}/></div>
+		            	<div class="logo"><img src={require("./../../assets/insurance/cigna.jpg")}/></div>
+		            	<div class="logo"><img src={require("./../../assets/insurance/empire.jpg")}/></div>
+		            	<div class="logo"><img src={require("./../../assets/insurance/first-choice-health.png")}/></div>
+		  	        </Column>
+
+		  	        <Column width="1/4">
+		  	        	<div class="logo"><img src={require("./../../assets/insurance/great-west.png")}/></div>
+		            	<div class="logo"><img src={require("./../../assets/insurance/health-net.png")}/></div>
+		            	<div class="logo"><img src={require("./../../assets/insurance/horizon.png")}/></div>
+		            	<div class="logo"><img src={require("./../../assets/insurance/humana.png")}/></div>
+		  	        </Column>
+
+		  	        <Column width="1/4">
+		  	        	<div class="logo"><img src={require("./../../assets/insurance/oxford.png")}/></div>
+		            	<div class="logo"><img src={require("./../../assets/insurance/triwest.jpg")}/></div>
+		            	<div class="logo"><img src={require("./../../assets/insurance/united.jpg")}/></div>
+		            	<div class="logo"><img src={require("./../../assets/insurance/wellpoint.png")}/></div>
+		  	        </Column>
+
+		  	      </Row>
+		      	</Grid>
+
+            </div>
           </div>
         </div>
 

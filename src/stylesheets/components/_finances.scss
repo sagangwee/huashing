@@ -1,10 +1,14 @@
 .finance-section {
 	border-bottom: 1px solid #eee;
 	padding-bottom: 4vh;
-	margin-top: 2vh;
+	margin-top: 4vh;
 
 	&:first-child {
 		margin: 0;
+	}
+
+	&:last-child {
+		border: none;
 	}
 }
 
@@ -27,7 +31,7 @@
 
 .payment-methods {
 	@extend .finance-module;
-	width: 90%;
+	width: 75%;
 	height: 30vh;
 }
 
@@ -49,5 +53,16 @@
 .insurance {
 	@extend .finance-module;
 	width: 90%;
-	height: 60vh;
+	height: 65vh;
+	padding: 6vh 4vw;
+}
+
+.logo {
+	width: 10vw;
+	margin-top: 3vh;
+	margin-right: 2vw;
+
+	&:first-child {
+		margin: 0;
+	}
 }

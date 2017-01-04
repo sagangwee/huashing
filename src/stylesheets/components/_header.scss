@@ -1,0 +1,18 @@
+header {
+	text-align: center;
+}
+
+header > h1 {
+	font-family: 'Source Sans Pro', sans-serif;
+	letter-spacing: 0.3em;
+	font-size: 3vw;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	color: #78c272;
+	font-weight: 800;
+	text-transform: uppercase;
+
+  @media screen and (max-width: $break-small) {
+    font-size: 24px;
+  }
+}

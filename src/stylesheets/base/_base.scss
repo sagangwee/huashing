@@ -1,0 +1,32 @@
+.container {
+  width: 70%;
+  margin: 0 auto;
+
+  @media screen and (max-width: $break-small) {
+    width: 90%;
+  }
+
+}
+
+h1 {
+  font-size: 2vw;
+
+  @media screen and (max-width: $break-small) {
+    font-size: 28px;
+  }
+}
+h2 {
+  font-size: 1.5vw;
+
+  @media screen and (max-width: $break-small) {
+    font-size: 22px;
+  }
+}
+p {
+  font-size: 2vmin;
+
+  @media screen and (max-width: $break-small) {
+    font-size: 18px;
+  }
+
+}

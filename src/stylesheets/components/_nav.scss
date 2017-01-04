@@ -67,3 +67,8 @@
 	color: #78c272 !important;
 	text-decoration: underline !important;
 }
+
+.nav a, button {
+	min-width: 48px;
+	min-height: 48px;
+}

@@ -89,7 +89,7 @@ export default class Treatments extends React.Component {
       	</Grid>
 
       	<h2>Treatment Preferences</h2>
-      	<Grid>
+      	<Grid class="content-margin">
   	      <Row>
   	        <Column width="1/2">
   	        	<h3>Style/Type</h3>

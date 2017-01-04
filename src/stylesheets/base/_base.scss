@@ -5,20 +5,20 @@
   // flex-wrap: wrap;
 
   @media screen and (max-width: $break-small) {
-    width: 90%;
+    width: 100%;
   }
 
 }
 
 h1 {
-  font-size: 2vw;
+  font-size: 4vh;
 
   @media screen and (max-width: $break-small) {
     font-size: 28px;
   }
 }
 h2 {
-  font-size: 1.5vw;
+  font-size: 3vh;
 
   @media screen and (max-width: $break-small) {
     font-size: 22px;

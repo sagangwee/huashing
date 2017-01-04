@@ -3,11 +3,18 @@
     overflow: hidden;
     height: 65vh;
 
+    @include large {
+      height: 115vh;
+      width: 100%;
+      margin: 0 auto;
+    }
+
     @media screen and (max-width: $break-small) {
-      height: 950px;
+      height: 900px;
       width: 300px;
       margin: 0 auto;
     }
+
 }
 
 .module {
@@ -15,11 +22,19 @@
     display: inline-block;
     box-sizing: border-box;
 
-    @media screen and (max-width: $break-small) {
+    @include large {
+      left: 0px;
+      top: 0px;
+      width: 100% !important;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: $break-small) and (max-width: $break-large) {
       left: 0px;
       top: 0px;
       width: 300px !important;
     }
+
 }
 
 .name-module {
@@ -35,7 +50,7 @@
 	top: calc(50% - 75px);
 	left: 1.5vw;
 
-	@media screen and (max-width: $break-small) {
+	@include small {
       left: 4vw;
     }
 }
@@ -43,10 +58,14 @@
 .title-module {
 	position: absolute;
 	top: calc(50% - 40px);
-	left: 12vw;
+	left: 150px;
 	color: white;
 
-	@media screen and (max-width: $break-small) {
+	@include large {
+		left: 160px;
+	}
+
+	@include small {
       left: 150px;
     }
 
@@ -61,6 +80,7 @@
       	font-size: 20px;
       }
     }
+
 }
 
 .summary-module {
@@ -74,14 +94,27 @@
     font-size: 18px;
     right: 0;
     top: 2vh;
+    transition-duration: 1.2s;
 
-    @media screen and (max-width: $break-small) {
-      width: 42%;
+    @include large {
       height: 500px;
-      transform: translate3d(0px, 400px, 0px);
-      transition-duration: 1.2s;
       top: 0;
       margin: 0;
+      transform: translate3d(0px, 395px, 0px);
+    }
+
+    @include small {
+      width: 42%;
+      height: 500px;
+      transform: translate3d(0px, 395px, 0px);
+      top: 0;
+      margin: 0;
+    }
+
+    p {
+    	@include small {
+    		font-size: 18px;
+    	}
     }
 }
 
@@ -97,10 +130,14 @@
 	color: white;
 	bottom: 0;
 	padding: 20px 30px;
+	transition-duration: 1.2s;
 
-	@media screen and (max-width: $break-small) {
-      transform: translate3d(0px, 200px, 0px);
-      transition-duration: 1.2s;
+	@include large {
+      transform: translate3d(0px, 190px, 0px);
+    }
+
+	@include small {
+      transform: translate3d(0px, 190px, 0px);
     }
 }
 

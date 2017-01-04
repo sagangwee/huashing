@@ -58,7 +58,9 @@ export default class Nav extends React.Component {
 
     return (
       <nav class={navClasses.join(' ')}>
-        <div class={navMobileClasses.join(' ')} onClick={this.toggleCollapse.bind(this)}></div>
+        <div class={navMobileClasses.join(' ')} onClick={this.toggleCollapse.bind(this)}>
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
         <ul class={navListClasses.join(' ')}>
           <li class={"nav-item " + featuredClass}>
             <IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>Home</IndexLink>

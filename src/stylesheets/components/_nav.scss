@@ -18,6 +18,13 @@
 		@include medium {
 		  display: none;
 		}
+
+	}
+
+	.nav-active {
+	  @include medium {
+	    display: block;
+	  }
 	}
 
 	@include medium {
@@ -48,8 +55,8 @@
 
 	@include medium {
 		border: none;
-		padding: 0;
 		margin: 0;
+		padding: 0;
 	}
 } 
 
@@ -81,20 +88,28 @@
 .nav-list > li > a:hover {
 	color: #78c272 !important;
 	text-decoration: underline !important;
+
+	@include medium {
+		background-color: #e5e5e5;
+	}
 }
 
-.nav-list a, button {
-	min-width: 48px;
-	min-height: 48px;
-}
+// .nav-list a, button {
+// 	min-width: 48px;
+// 	min-height: 48px;
+// }
 
-.nav-item {
+.nav-list > .nav-item {
+	display: block;
+
 	a {
-		@include medium {
-			background: #f5f6f7;
-			padding: 10px;
+		display: block;
 
+		@include medium {
+		  background: #f5f6f7;
+		  padding: 1.5em 1.25em;
 		}
+
 	}
 
 	@include medium {
@@ -109,6 +124,8 @@
   position: absolute;
   top: 0;
   right: 0;
+  left: 0;
+  margin: 0 auto;
   background: #34495E url(../assets/nav.svg) no-repeat center center;
   height: 40px;
   width: 40px;
@@ -133,9 +150,7 @@
 	.nav-item:last-child a {
 		border-radius:0 0 5px 5px;
 	}
-	.nav-active {
-		display:block;
-	}
+
 	.nav-mobile-open {
 		border-radius:5px 5px 0 0;
 		-webkit-border-radius:5px 5px 0 0;

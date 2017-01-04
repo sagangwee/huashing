@@ -1,4 +1,4 @@
-.navbar {
+.nav {
 	position: relative;
 	border-color: #dedede;
 	margin-top: 0;
@@ -14,16 +14,25 @@
 	    list-style-type: none;
 		margin: 0;
 		padding: 0;
+
+		@include medium {
+		  display: none;
+		}
+	}
+
+	@include medium {
+	  width: 100%;
+	  padding: 40px 0 0;
 	}
 }
 
-.nav > li {
+.nav-list > li {
 	float: left;
 	position: relative;
 	display: block;
 }
 
-.nav > li > a {
+.nav-list > li > a {
 	font-size: 1em;
 	line-height: 1.2857em;
 	font-weight: 600;
@@ -31,11 +40,17 @@
 	color: #45445a;
 }
 
-.nav > li + li > a {
+.nav-list > li + li > a {
 	border-left: 1px solid;
 	border-color: rgba(222,222,222,0.5);
 	padding-left: .88em;
 	margin-left: .88em;
+
+	@include medium {
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
 } 
 
 .nav-fixed {
@@ -63,12 +78,67 @@
 	color: #78c272 !important;
 }
 
-.nav > li > a:hover {
+.nav-list > li > a:hover {
 	color: #78c272 !important;
 	text-decoration: underline !important;
 }
 
-.nav a, button {
+.nav-list a, button {
 	min-width: 48px;
 	min-height: 48px;
+}
+
+.nav-item {
+	a {
+		@include medium {
+			background: #f5f6f7;
+			padding: 10px;
+
+		}
+	}
+
+	@include medium {
+	  width: 100%;
+	  float: none;
+	}
+}
+
+.nav-mobile {
+  display :none; /* Hide from browsers that don't support media queries */
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #34495E url(../assets/nav.svg) no-repeat center center;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+
+  @include medium {
+  	display: block;
+  }
+
+}
+
+/*------------------------------------*\
+    Media Queries
+\*------------------------------------*/
+
+@include medium {
+	.nav-item:first-child a {
+		border-radius:5px 0 0;
+	}
+	.nav-item:last-child a {
+		border-radius:0 0 5px 5px;
+	}
+	.nav-active {
+		display:block;
+	}
+	.nav-mobile-open {
+		border-radius:5px 5px 0 0;
+		-webkit-border-radius:5px 5px 0 0;
+		-moz-border-radius:5px 5px 0 0;
+	}
 }

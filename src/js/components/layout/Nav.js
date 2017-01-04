@@ -6,13 +6,15 @@ export default class Nav extends React.Component {
     super()
     this.state = {
       collapsed: true,
-      fixed: false
+      fixed: false,
+      navActive: false
     };
   }
 
   toggleCollapse() {
     const collapsed = !this.state.collapsed;
-    this.setState({collapsed});
+    const navActive = !this.state.navActive;
+    this.setState({collapsed, navActive});
   }
 
   componentDidMount() {
@@ -40,35 +42,40 @@ export default class Nav extends React.Component {
     const { location } = this.props;
     const { collapsed } = this.state;
     const { fixed } = this.state;
+    const { navActive } = this.state;
     const featuredClass = location.pathname === "/" ? "active" : "";
     const aboutClass = location.pathname.match(/^\/about/) ? "active" : "";
     const treatmentsClass = location.pathname.match(/^\/treatments/) ? "active" : "";
     const financesClass = location.pathname.match(/^\/finances/) ? "active" : "";
     const testimonialsClass = location.pathname.match(/^\/testimonials/) ? "active" : "";
     const contactClass = location.pathname.match(/^\/contact/) ? "active" : "";
-    const navClasses = ["navbar"];
-    if (collapsed) { navClasses.push('collapse'); }
+    const navClasses = ["nav"];
     if (fixed) { navClasses.push('nav-fixed'); }
+    const navMobileClasses = ["nav-mobile"];
+    if (!collapsed) { navMobileClasses.push('nav-mobile-open'); }
+    const navListClasses = ["nav-list"];
+    if (navActive) { navListClasses.push('nav-active'); }
 
     return (
       <nav class={navClasses.join(' ')}>
-        <ul class="nav">
-          <li class={featuredClass}>
+        <div class={navMobileClasses.join(' ')} onClick={this.toggleCollapse.bind(this)}></div>
+        <ul class={navListClasses.join(' ')}>
+          <li class={"nav-item " + featuredClass}>
             <IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>Home</IndexLink>
           </li>
-          <li class={aboutClass}>
+          <li class={"nav-item " + aboutClass}>
             <Link to="about" onClick={this.toggleCollapse.bind(this)}>About</Link>
           </li>
-          <li class={treatmentsClass}>
+          <li class={"nav-item " + treatmentsClass}>
             <Link to="treatments" onClick={this.toggleCollapse.bind(this)}>Treatments</Link>
           </li>
-          <li class={testimonialsClass}>
+          <li class={"nav-item " + testimonialsClass}>
             <Link to="testimonials" onClick={this.toggleCollapse.bind(this)}>Testimonials</Link>
           </li>
-          <li class={financesClass}>
+          <li class={"nav-item " + financesClass}>
             <Link to="finances" onClick={this.toggleCollapse.bind(this)}>Finances</Link>
           </li>
-          <li class={contactClass}>
+          <li class={"nav-item " + contactClass}>
             <Link to="contact" onClick={this.toggleCollapse.bind(this)}>Contact</Link>
           </li>
         </ul>

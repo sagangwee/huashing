@@ -4,10 +4,10 @@ import ContactForm from "../components/ContactForm";
 import {Grid, Row, Column, observeGrid} from 'react-cellblock';
 
 const Section = observeGrid(function (props) {
-  if (props.colWidth <= 4) {
+  if (props.colWidth <= 6) {
     return (
       <Column>
-        { props.children }
+        <div class="center-button">{ props.children }</div>
       </Column>
     );
   }
@@ -40,7 +40,7 @@ export default function Contact() {
   return (
     <div>
     	<h1 class="page-title">Contact</h1>
-    	<Grid>
+    	<Grid breakpoints={[4,6,8,12,16]}>
 	      <Row>
 	        <Section width="1/2">
 	          <ContactForm> </ContactForm>

@@ -10,30 +10,28 @@ export default class Finances extends React.Component {
         <div>
           <div class="finance-section">
             <h2 class="center-text">Average Cost per Session </h2>
-            <div class="price">$60 - $200</div>
+            <div class="price"><span>$60 - $200</span></div>
           </div>
 
           <div class="finance-section">
             <h2 class="center-text">Accepted Payment Methods</h2>
             <div class="payment-methods center-text">
-              <Grid>
-		  	      <Row>
-		  	        <Column width="1/3">
-		  	        	<img src={require("./../../assets/check.jpg")} class="finance-img"/>
-		  	        	<div>Check</div>
-		  	        </Column>
+            	<ul>
+		        	<li>
+		        		<img src={require("./../../assets/check.jpg")} class="finance-img"/>
+						<div>Check</div>
+		        	</li>
 
-		  	        <Column width="1/3">
-		  	        	<img src={require("./../../assets/mastercard.png")} class="finance-img mastercard"/>
-		  	        	<div>Mastercard</div>
-		  	        </Column>
+		        	<li>
+		        		<img src={require("./../../assets/mastercard.png")} class="finance-img mastercard"/>
+		        		<div>Mastercard</div>
+		        	</li>
 
-		  	        <Column width="1/3">
-		  	        	<img src={require("./../../assets/visa.png")} class="finance-img visa"/>
-		  	        	<div>Visa</div>
-		  	        </Column>
-		  	      </Row>
-		      	</Grid>
+		        	<li>
+		        		<img src={require("./../../assets/visa.png")} class="finance-img visa"/>
+		        		<div>Visa</div>
+					</li>
+  	        	</ul>
             </div>
           </div>
 

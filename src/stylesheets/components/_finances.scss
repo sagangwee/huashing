@@ -23,37 +23,39 @@
 .price {
 	@extend .finance-module;
 	width: 60%;
-	height: 25vh;
 	text-align: center;
-	font-size: 64px;
 	color: #78c272;
+
+	span {
+		font-size: 8vw;
+    	line-height: 8vh;
+	}
 }
 
 .payment-methods {
-	@extend .finance-module;
-	width: 75%;
-	height: 30vh;
-}
+  @extend .finance-module;
+  width: 75%;
 
-.finance-img {
-	max-width: 60%;
-	height: auto;
-	margin: 0 auto;
-	margin-top: 3vh;
-}
+  ul {
+    padding: 0;
+    text-align: center;
 
-.mastercard {
-	max-width: 50%;
-}
+	li {
+	  margin: 30px;
+	  display: inline-block;
 
-.visa {
-	max-width: 40%;
+	  img {
+	  	max-height: 70px;
+	  	vertical-align: middle;
+	  }
+    }
+  }
 }
 
 .insurance {
   @extend .finance-module;
   width: 90%;
-  padding: 4vh 4vw;
+  padding: 4vh 2vw;
 
   ul {
     padding: 0;
@@ -64,7 +66,7 @@
 	  display: inline-block;
 
 	  img {
-	  	max-height: 35px;
+	  	max-height: 50px;
 	  	vertical-align: middle;
 	  }
     }

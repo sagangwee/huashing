@@ -40,9 +40,11 @@ export default class Nav extends React.Component {
 
   render() {
     const { location } = this.props;
-    const { collapsed } = this.state;
-    const { fixed } = this.state;
-    const { navActive } = this.state;
+    const { 
+      collapsed,
+      fixed,
+      navActive 
+    } = this.state;
     const featuredClass = location.pathname === "/" ? "active" : "";
     const aboutClass = location.pathname.match(/^\/about/) ? "active" : "";
     const treatmentsClass = location.pathname.match(/^\/treatments/) ? "active" : "";

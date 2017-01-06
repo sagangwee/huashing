@@ -4,21 +4,27 @@ import ContactForm from "../components/ContactForm";
 import {Grid, Row, Column, observeGrid} from 'react-cellblock';
 
 const RespCol = observeGrid(function (props) {
-  const { classes } = props;
+  const { 
+    children,
+    classes 
+  } = props;
+  
   const colClasses = ["responsive-col"];
   colClasses.push(classes);
 
   if (props.colWidth <= 6) {
     return (
       <Column>
-        <div class={ colClasses.join(' ') }>{ props.children }</div>
+        <div class={ colClasses.join(' ') }>
+          { children }
+        </div>
       </Column>
     );
   }
 
   return (
     <Column width="1/2">
-      { props.children }
+      { children }
     </Column>
   );
 });

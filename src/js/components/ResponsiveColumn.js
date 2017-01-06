@@ -4,7 +4,7 @@ import {Grid, Row, Column, observeGrid} from 'react-cellblock';
 const ResponsiveColumn = observeGrid(function (props) {
   const { 
     children,
-    classes,
+    smallClasses,
     colWidth,
     width 
   } = props;
@@ -12,7 +12,7 @@ const ResponsiveColumn = observeGrid(function (props) {
   if (colWidth <= 6) {
     return (
       <Column>
-        <div class={ classes }>
+        <div class={ smallClasses }>
           { children }
         </div>
       </Column>

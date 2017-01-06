@@ -24,7 +24,7 @@ export default class Treatments extends React.Component {
         </p>
 
         <h2>Specialties</h2>
-        <ul>
+        <ul class="responsive-ul">
        	  <li>Pain Management</li>
        	  <li>Neck Pain</li>
        	  <li>Back Pain</li>
@@ -35,8 +35,8 @@ export default class Treatments extends React.Component {
         <h2>Issues</h2>
         <Grid>
   	      <Row>
-  	        <ResponsiveColumn width="1/3">
-	  	        <ul>
+  	        <ResponsiveColumn width="1/3" smallClasses="no-margin top-ul">
+	  	        <ul class="responsive-ul">
 		        	<li>Addiction</li>                 
 		            <li>Allergies</li>
 		            <li>Anxiety</li>
@@ -53,8 +53,8 @@ export default class Treatments extends React.Component {
 		        </ul>
   	        </ResponsiveColumn>
 
-  	        <ResponsiveColumn width="1/3">
-	  	        <ul>
+  	        <ResponsiveColumn width="1/3" smallClasses="no-margin">
+	  	        <ul class="responsive-ul no-margin">
 		            <li>Diabetes</li>
 		            <li>Eating Disorders</li>
 		            <li>Eye Problems</li>
@@ -71,8 +71,8 @@ export default class Treatments extends React.Component {
 		        </ul>
   	        </ResponsiveColumn>
 
-  	        <ResponsiveColumn width="1/3">
-  	        	<ul>
+  	        <ResponsiveColumn width="1/3" smallClasses="no-margin bot-ul">
+  	        	<ul class="responsive-ul">
 		            <li>Nutrition</li>
 		            <li>Orthopedics</li>
 		            <li>Pediatric</li>
@@ -94,7 +94,7 @@ export default class Treatments extends React.Component {
   	      <Row>
   	        <ResponsiveColumn width="1/2">
   	        	<h3>Style/Type</h3>
-	  	        <ul>
+	  	        <ul class="responsive-ul">
 		        	<li>Auricular Acupuncture</li>                 
 		            <li>Chinese Acupuncture</li>
 		            <li>Five Element Acupuncture</li>
@@ -104,7 +104,7 @@ export default class Treatments extends React.Component {
 
   	        <ResponsiveColumn width="1/2">
   	        	<h3>Treatment Techniques</h3>
-	  	        <ul>
+	  	        <ul class="responsive-ul">
 		            <li>Cupping</li>
 		            <li>Electro acupuncture</li>
 		            <li>Gua Sha</li>

@@ -1,0 +1,19 @@
+.no-margin > ul {
+	margin: 0;
+}
+
+.top-ul > ul {
+	margin-top: 1em;
+}
+
+.bot-ul > ul {
+	margin-bottom: 1em;
+}
+
+.responsive-ul {
+	font-size: 3vmin;
+
+	@include small {
+		font-size: 18px;
+	}
+}

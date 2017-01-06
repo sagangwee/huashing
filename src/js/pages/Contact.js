@@ -27,7 +27,7 @@ export default function Contact() {
     	<h1 class="page-title">Contact</h1>
     	<Grid breakpoints={[4,6,8,12,16]}>
 	      <Row>
-	        <ResponsiveColumn width={"1/2"} classes={ "responsive-col center-text" }>
+	        <ResponsiveColumn width={"1/2"} smallClasses={ "responsive-col center-text" }>
 	          <ContactForm> </ContactForm>
 	        </ResponsiveColumn>
 	        <ResponsiveColumn width={"1/2"}>

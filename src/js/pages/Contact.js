@@ -3,11 +3,15 @@ import Address from "../components/Address";
 import ContactForm from "../components/ContactForm";
 import {Grid, Row, Column, observeGrid} from 'react-cellblock';
 
-const Section = observeGrid(function (props) {
+const RespCol = observeGrid(function (props) {
+  const { classes } = props;
+  const colClasses = ["responsive-col"];
+  colClasses.push(classes);
+
   if (props.colWidth <= 6) {
     return (
       <Column>
-        <div class="center-button">{ props.children }</div>
+        <div class={ colClasses.join(' ') }>{ props.children }</div>
       </Column>
     );
   }
@@ -42,10 +46,10 @@ export default function Contact() {
     	<h1 class="page-title">Contact</h1>
     	<Grid breakpoints={[4,6,8,12,16]}>
 	      <Row>
-	        <Section width="1/2">
+	        <RespCol classes={ "center-text" }>
 	          <ContactForm> </ContactForm>
-	        </Section>
-	        <Section width="1/2">
+	        </RespCol>
+	        <RespCol >
 	          <h4 style={phoneHeaderStyle}>Phone</h4>
 	          (480) 951-5785 
 	          <h4 style={locationHeaderStyle}>Location</h4>
@@ -54,7 +58,7 @@ export default function Contact() {
 	          <h4 style={locationHeaderStyle}>Additional Location</h4>
 	          <Address name={name} street={street2} number={number2} cityStateZip={cityStateZip2} > </Address>
 
-	        </Section>
+	        </RespCol>
 	      </Row>
     	</Grid>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import ResponsiveColumn from "../components/ResponsiveColumn";
 import {Grid, Row, Column} from 'react-cellblock';
 
 export default class Treatments extends React.Component {
@@ -34,7 +35,7 @@ export default class Treatments extends React.Component {
         <h2>Issues</h2>
         <Grid>
   	      <Row>
-  	        <Column width="1/3">
+  	        <ResponsiveColumn width="1/3">
 	  	        <ul>
 		        	<li>Addiction</li>                 
 		            <li>Allergies</li>
@@ -50,9 +51,9 @@ export default class Treatments extends React.Component {
 		            <li>Cosmetic Acupuncture</li>
 		            <li>Depression</li>
 		        </ul>
-  	        </Column>
+  	        </ResponsiveColumn>
 
-  	        <Column width="1/3">
+  	        <ResponsiveColumn width="1/3">
 	  	        <ul>
 		            <li>Diabetes</li>
 		            <li>Eating Disorders</li>
@@ -68,9 +69,9 @@ export default class Treatments extends React.Component {
 		            <li>Muscle Aches</li>
 		            <li>Natural Healing</li>
 		        </ul>
-  	        </Column>
+  	        </ResponsiveColumn>
 
-  	        <Column width="1/3">
+  	        <ResponsiveColumn width="1/3">
   	        	<ul>
 		            <li>Nutrition</li>
 		            <li>Orthopedics</li>
@@ -84,14 +85,14 @@ export default class Treatments extends React.Component {
 		            <li>Urology</li> 
 		            <li>Weight Loss</li>
 		        </ul>
-  	        </Column>
+  	        </ResponsiveColumn>
   	      </Row>
       	</Grid>
 
       	<h2>Treatment Preferences</h2>
       	<Grid class="content-margin">
   	      <Row>
-  	        <Column width="1/2">
+  	        <ResponsiveColumn width="1/2">
   	        	<h3>Style/Type</h3>
 	  	        <ul>
 		        	<li>Auricular Acupuncture</li>                 
@@ -99,9 +100,9 @@ export default class Treatments extends React.Component {
 		            <li>Five Element Acupuncture</li>
 		            <li>Trigger Point Acupuncture</li> 
 		        </ul>
-  	        </Column>
+  	        </ResponsiveColumn>
 
-  	        <Column width="1/2">
+  	        <ResponsiveColumn width="1/2">
   	        	<h3>Treatment Techniques</h3>
 	  	        <ul>
 		            <li>Cupping</li>
@@ -111,7 +112,7 @@ export default class Treatments extends React.Component {
 		            <li>Moxibustion</li>
 		            <li>Qigong</li>          
 		        </ul>
-  	        </Column>
+  	        </ResponsiveColumn>
 
   	      </Row>
       	</Grid>

@@ -1,33 +1,8 @@
 import React from "react";
 import Address from "../components/Address";
 import ContactForm from "../components/ContactForm";
+import ResponsiveColumn from "../components/ResponsiveColumn";
 import {Grid, Row, Column, observeGrid} from 'react-cellblock';
-
-const RespCol = observeGrid(function (props) {
-  const { 
-    children,
-    classes 
-  } = props;
-  
-  const colClasses = ["responsive-col"];
-  colClasses.push(classes);
-
-  if (props.colWidth <= 6) {
-    return (
-      <Column>
-        <div class={ colClasses.join(' ') }>
-          { children }
-        </div>
-      </Column>
-    );
-  }
-
-  return (
-    <Column width="1/2">
-      { children }
-    </Column>
-  );
-});
 
 const locationHeaderStyle = {
   marginBottom: "0.5em",
@@ -52,10 +27,10 @@ export default function Contact() {
     	<h1 class="page-title">Contact</h1>
     	<Grid breakpoints={[4,6,8,12,16]}>
 	      <Row>
-	        <RespCol classes={ "center-text" }>
+	        <ResponsiveColumn width={"1/2"} classes={ "responsive-col center-text" }>
 	          <ContactForm> </ContactForm>
-	        </RespCol>
-	        <RespCol >
+	        </ResponsiveColumn>
+	        <ResponsiveColumn width={"1/2"}>
 	          <h4 style={phoneHeaderStyle}>Phone</h4>
 	          (480) 951-5785 
 	          <h4 style={locationHeaderStyle}>Location</h4>
@@ -64,7 +39,7 @@ export default function Contact() {
 	          <h4 style={locationHeaderStyle}>Additional Location</h4>
 	          <Address name={name} street={street2} number={number2} cityStateZip={cityStateZip2} > </Address>
 
-	        </RespCol>
+	        </ResponsiveColumn>
 	      </Row>
     	</Grid>
     </div>

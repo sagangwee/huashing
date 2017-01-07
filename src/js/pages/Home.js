@@ -5,7 +5,7 @@ export default class Home extends React.Component {
   render() {
     const images = [
       {
-        original: require("./../../assets/carousel/acupuncture650.jpg"),
+        original: require("./../../assets/carousel/acupuncture3_650.jpg"),
         description: 'Acupuncture'
       },
       {

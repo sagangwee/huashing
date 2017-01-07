@@ -1,5 +1,7 @@
-.image-gallery-image > img {
+.image-gallery-image > div {
 	height: 76vh;
+	background-size: cover;
+	background-position: center center;
 }
 
 .image-gallery-slide {
@@ -12,12 +14,21 @@
 	  -webkit-transform: translateX(-50%);
 	  transform: translateX(-50%);
 	  text-align: center;
+
+	  @include small {
+	  	top: 15vh;
+	  }
 	}
 
 	&:first-child .image-gallery-description {
 	  // color: #2c2c2c;
 	  left: 250px;
 	  top: 8vh;
+
+	  @include small {
+	  	left: 152px;
+	  	font-size: 9vh;	
+	  }
 	}
 }
 

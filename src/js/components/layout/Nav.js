@@ -45,7 +45,7 @@ export default class Nav extends React.Component {
       fixed,
       navActive 
     } = this.state;
-    const featuredClass = location.pathname === "/" ? "active" : "";
+    const homeClass = location.pathname === "/" ? "active" : "";
     const aboutClass = location.pathname.match(/^\/about/) ? "active" : "";
     const treatmentsClass = location.pathname.match(/^\/treatments/) ? "active" : "";
     const financesClass = location.pathname.match(/^\/finances/) ? "active" : "";
@@ -64,7 +64,7 @@ export default class Nav extends React.Component {
           <i class="fa fa-bars" aria-hidden="true"></i>
         </div>
         <ul class={navListClasses.join(' ')}>
-          <li class={"nav-item " + featuredClass}>
+          <li class={"nav-item " + homeClass}>
             <IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>Home</IndexLink>
           </li>
           <li class={"nav-item " + aboutClass}>

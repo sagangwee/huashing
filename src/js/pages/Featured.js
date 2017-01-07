@@ -23,6 +23,8 @@ export default class Featured extends React.Component {
           showFullscreenButton={false}
           showThumbnails={false}
           slideInterval={2000} />
+        <div class="container">
+        </div>
       </div>
     );
   }

@@ -19,7 +19,6 @@ export default class Layout extends React.Component {
         <Nav location={location} />
 
         <div class={pathname == "/" ? "" : "container"} style={containerStyle}>
-          {pathname}
           {this.props.children}
         </div>
         <Footer/>

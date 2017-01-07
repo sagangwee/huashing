@@ -5,11 +5,11 @@ export default class Home extends React.Component {
   render() {
     const images = [
       {
-        original: require("./../../assets/carousel/acupuncture.jpg"),
-        description: 'Optional description...'
+        original: require("./../../assets/carousel/acupuncture650.jpg"),
+        description: 'Acupuncture'
       },
       {
-        original: require("./../../assets/carousel/tcm.jpg"),
+        original: require("./../../assets/carousel/tcm2_650.jpg"),
         description: 'Traditional Chinese Medicine'
       }
     ]
@@ -20,9 +20,10 @@ export default class Home extends React.Component {
           ref={i => this._imageGallery = i}
           items={images}
           autoPlay={true}
+          showBullets={true}
           showFullscreenButton={false}
           showThumbnails={false}
-          slideInterval={2000} />
+          slideInterval={4000} />
         <div class="container">
         </div>
       </div>

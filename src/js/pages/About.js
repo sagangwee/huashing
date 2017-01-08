@@ -1,6 +1,10 @@
 import React from "react";
 
 export default class About extends React.Component {
+  componentDidMount() {
+  	document.body.scrollTop = 0;
+  }
+  
   render() {
     return (
 		<div>

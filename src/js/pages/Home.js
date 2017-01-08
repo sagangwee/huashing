@@ -1,6 +1,7 @@
 import React from "react";
 import ImageGallery from 'react-image-gallery';
 import Button from "../components/Button";
+import { Link } from "react-router";
 
 export default class Home extends React.Component {
   renderItem(item) {
@@ -70,7 +71,10 @@ export default class Home extends React.Component {
 
         <section class="home-section bio-section">
           <div class="bio-inner">
-            <img src={require("./../../assets/huawang.jpg")} class="huawang-home"/>
+            <div class="huawang-wrapper">
+              <img src={require("./../../assets/huawang.jpg")} class="huawang-home"/>
+              <Link to="about" class="about-link">About Hua Wang</Link>
+            </div>
             <div class="bio-summary">
               <h2>Meet the Expert</h2>
               <p>Hua Wang is an expert in acupuncture and Traditional Chinese Medicine with over 20 years of experience. 

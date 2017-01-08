@@ -54,3 +54,13 @@ p {
 .center-text {
   text-align: center;
 }
+
+a {
+  text-decoration: none;
+  color: #96d019;
+  font-size: 3vmin;
+
+  &:hover {
+    color: #687F36;
+  }
+}

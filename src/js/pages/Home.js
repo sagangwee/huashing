@@ -14,7 +14,7 @@ export default class Home extends React.Component {
         {
           item.description &&
             <span className='image-gallery-description'>
-              {item.description}
+              <div className='image-gallery-description-inner'>{item.description}</div>
             </span>
         }
       </div>
@@ -28,7 +28,7 @@ export default class Home extends React.Component {
         description: 'Acupuncture'
       },
       {
-        original: require("./../../assets/carousel/tcm2_650.jpg"),
+        original: require("./../../assets/carousel/tcm-cc-650.jpg"),
         description: 'Traditional Chinese Medicine'
       }
     ]

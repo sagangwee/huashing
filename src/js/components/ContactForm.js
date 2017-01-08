@@ -11,7 +11,7 @@ export default class ContactForm extends React.Component {
         <input class="input" placeholder="Email"></input>
         <input class="input" placeholder="Phone"></input>
         <textarea class="input messageBox" placeholder="Message"></textarea>
-        <Button text="Send Message"></Button>
+        <Button to="/" text="Send Message"></Button>
       </div>
     );
   }

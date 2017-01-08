@@ -60,16 +60,41 @@
 }
 
 .home-section {
-  padding-left: 15vw;
-  padding-right: 15vw;
-  margin-bottom: 8vh;
-  margin-top: 8vh;
+  padding: 8vh 15vw;
+  overflow: hidden;
+  background: #FFF3EA;
+  color: #3B3B3B;
 
   @include small {
   	padding-left: 5vw;
   	padding-right: 5vw;
   }
 }
+
 .info-section {
   @extend .home-section;
+}
+
+.bio-section {
+  @extend .home-section;
+  padding-top: 0;
+  // background: rgba(244,245,246,0.9);
+
+}
+
+.bio-inner {
+	margin: 0 auto;
+	width: 80%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.huawang-home {
+	float: left;
+}
+
+.bio-summary {
+  width: 50%;
+  margin-left: 8vw;
 }

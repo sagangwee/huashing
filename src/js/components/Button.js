@@ -1,12 +1,16 @@
 import React from "react";
+import { Link } from "react-router";
 
 export default class Button extends React.Component {
   render() {
-    const {text} = this.props;
+    const { 
+      text,
+      to 
+    } = this.props;
     return (
-      <a class="button">
+      <Link to={ to } class="button">
         {text}
-      </a>
+      </Link>
     );
   }
 }

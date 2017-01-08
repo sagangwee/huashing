@@ -1,5 +1,6 @@
 import React from "react";
 import ImageGallery from 'react-image-gallery';
+import Button from "../components/Button";
 
 export default class Home extends React.Component {
   renderItem(item) {
@@ -48,6 +49,7 @@ export default class Home extends React.Component {
           showFullscreenButton={false}
           showThumbnails={false}
           slideInterval={4000} />
+
         <section class="home-section info-section">
           <h2>Acupuncture</h2>
           <p>
@@ -64,6 +66,19 @@ export default class Home extends React.Component {
             In the United States, some 10,000 practitioners serve more than 1 million patients each year.
           </p>
 
+        </section>
+
+        <section class="home-section bio-section">
+          <div class="bio-inner">
+            <img src={require("./../../assets/huawang.jpg")} class="huawang-home"/>
+            <div class="bio-summary">
+              <h2>Meet the Expert</h2>
+              <p>Hua Wang is an expert in acupuncture and Traditional Chinese Medicine with over 20 years of experience. 
+                 She specializes in pain and stress management, with a focus in neck, shoulder, and back pain.
+              </p>
+              <div class="bio-button-container"><Button to="treatments" text="See All Treatments"></Button></div>
+            </div>
+          </div>
         </section>
       </div>
     );

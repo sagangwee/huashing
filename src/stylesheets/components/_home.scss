@@ -59,9 +59,17 @@
 	}
 }
 
-.info-section {
+.home-section {
   padding-left: 15vw;
   padding-right: 15vw;
-  margin-bottom: 6vh;
-  margin-top: 6vh;
+  margin-bottom: 8vh;
+  margin-top: 8vh;
+
+  @include small {
+  	padding-left: 5vw;
+  	padding-right: 5vw;
+  }
+}
+.info-section {
+  @extend .home-section;
 }

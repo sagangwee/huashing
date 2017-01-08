@@ -48,7 +48,7 @@ export default class Home extends React.Component {
           showFullscreenButton={false}
           showThumbnails={false}
           slideInterval={4000} />
-        <section class="info-section">
+        <section class="home-section info-section">
           <h2>Acupuncture</h2>
           <p>
             Acupuncture techniques involve stimulating specific points on the body using thin, stainless steel needles.

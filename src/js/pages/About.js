@@ -22,10 +22,10 @@ export default class About extends React.Component {
 				<div class="qualifications-module">
 					<h2 class="qualifications-header">Qualifications</h2>
 					<br/>
-					<strong class="bold-brown">Years in Practice:</strong> 20+ Years <br/>
-					<strong class="bold-brown">School:</strong> Cheng Du University of TCM <br/>
-					<strong class="bold-brown">Year Graduated:</strong> 1993 <br/>
-					<strong class="bold-brown">License No. and State:</strong> 0438 Arizona
+					<strong class="bold-brown">Years in Practice:</strong> 20+ <br/>
+					<strong class="bold-brown">Education:</strong> Cheng Du University of TCM 1993 <br/>
+					<strong class="bold-brown">License No. and State:</strong> 0438 Arizona <br/>
+					<strong class="bold-brown">Languages:</strong> English, Mandarin
 				</div>
 			</div>
 		</div>

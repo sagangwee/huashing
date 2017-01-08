@@ -13,7 +13,7 @@ header > h1 {
 	text-transform: uppercase;
 	line-height: 1.2em;
   
-  &:first-child {
+  &:first-of-type {
   	margin-top: 0.5em;
   }	
 

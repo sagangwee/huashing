@@ -57,9 +57,10 @@
 
 .title-module {
 	position: absolute;
-	top: calc(50% - 40px);
-	left: 42%;
+	top: calc(50% - 49px);
+	left: 45%;
 	color: white;
+  width: 55%;
 
 	@include large {
 		left: 160px;

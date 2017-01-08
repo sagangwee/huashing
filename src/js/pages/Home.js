@@ -24,7 +24,7 @@ export default class Home extends React.Component {
   render() {
     const images = [
       {
-        original: require("./../../assets/carousel/acupuncture-cc-650.png"),
+        original: require("./../../assets/carousel/acupuncture-cc-650.jpg"),
         description: 'Acupuncture'
       },
       {

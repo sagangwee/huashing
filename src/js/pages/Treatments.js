@@ -3,6 +3,10 @@ import ResponsiveColumn from "../components/ResponsiveColumn";
 import {Grid, Row, Column} from 'react-cellblock';
 
 export default class Treatments extends React.Component {
+  componentDidMount() {
+  	document.body.scrollTop = 0;
+  }
+
   render() {
     return (
       <div>

@@ -79,7 +79,6 @@
   @extend .home-section;
   padding-top: 0;
   // background: rgba(244,245,246,0.9);
-
 }
 
 .bio-inner {
@@ -97,4 +96,12 @@
 .bio-summary {
   width: 50%;
   margin-left: 8vw;
+}
+
+.bio-button-container {
+
+  .button {
+  	border-radius: 3px;
+  	margin-top: 2vh;
+  }
 }

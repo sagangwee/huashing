@@ -60,7 +60,7 @@ a {
   color: #96d019;
   font-size: 3vmin;
 
-  &:hover {
-    color: #687F36;
+  @include small {
+    font-size: 16px;
   }
 }

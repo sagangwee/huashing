@@ -80,7 +80,7 @@ export default class Home extends React.Component {
               <p>Hua Wang is an expert in acupuncture and Traditional Chinese Medicine with over 20 years of experience. 
                  She specializes in pain and stress management, with a focus in neck, shoulder, and back pain.
               </p>
-              <div class="bio-button-container"><Button to="treatments" text="See All Treatments"></Button></div>
+              <div class="bio-button-container"><Button to="treatments">See All Treatments</Button></div>
             </div>
           </div>
         </section>

@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router";
 
-export default class Button extends React.Component {
-  render() {
-    const { 
-      text,
-      to
-    } = this.props;
+const Button = function (props) {
+  const { 
+    children,
+    to
+  } = props;
 
-    return (
-      <Link to={ to } class="button">
-        {text}
-      </Link>
-    );
-  }
-}
+  return (
+    <Link to={ to } class="button">
+      {children}
+    </Link>
+  );
+};
+
+export default Button;

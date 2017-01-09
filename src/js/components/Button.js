@@ -5,8 +5,9 @@ export default class Button extends React.Component {
   render() {
     const { 
       text,
-      to 
+      to
     } = this.props;
+
     return (
       <Link to={ to } class="button">
         {text}

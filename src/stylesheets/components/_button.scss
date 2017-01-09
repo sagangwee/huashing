@@ -3,6 +3,7 @@
 	background-color: #96d019;
     border-color: #96d019;
 	border-radius: 31px;
+	border-style: solid;
 	border-width: 4px;
 	box-sizing: border-box;
 	display: inline-block;
@@ -14,6 +15,7 @@
 	outline: none;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	cursor: pointer;
+	font-size: 14px;
 }
 
 .button:hover {

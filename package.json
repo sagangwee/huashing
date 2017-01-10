@@ -1,5 +1,5 @@
 {
-  "name": "react-tutorials",
+  "name": "react-huashing",
   "version": "0.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -40,8 +40,8 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --content-base src/static --progress --inline --hot",
-    "start": "cross-env NODE_ENV=production babel-node --presets 'react,es2015' src/server.js",
-    "build": "cross-env NODE_ENV=production node_modules/.bin/webpack -p"
+    "build": "cross-env NODE_ENV=production node_modules/.bin/webpack -p --config ./webpack.production.config.js",
+    "serve": "cross-env NODE_ENV=production babel-node src/server.js"
   },
   "author": "",
   "license": "ISC"

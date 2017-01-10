@@ -21,7 +21,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
-          presets: debug ? ['react', 'es2015', 'stage-0', 'react-hmre'] : ['react', 'es2015', 'stage-0']
+          presets: debug ? ['react', 'es2015', 'stage-0', 'react-hmre'] : ['react', 'es2015', 'stage-0'],
           plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
         }
       },

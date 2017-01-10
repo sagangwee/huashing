@@ -32,7 +32,7 @@ module.exports = {
   },
   output: {
     path: __dirname + "/src/",
-    filename: "client.min.js"
+    filename: "static/js/client.min.js"
   },
   plugins: debug ? [] : [
     new webpack.DefinePlugin({

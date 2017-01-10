@@ -27,14 +27,16 @@ export default class Home extends React.Component {
   }
 
   render() {
+    const acupunctureSrc = "./../../assets/carousel/acupuncture-cc-650.jpg";
+    const tcmSrc = "./../../assets/carousel/tcm-cc-650.jpg";
     const images = [
       {
-        original: require("./../../assets/carousel/acupuncture-cc-650.jpg"),
+        original: acupunctureSrc,
         description: 'Acupuncture',
         subHeading: 'Healing & Wellness'
       },
       {
-        original: require("./../../assets/carousel/tcm-cc-650.jpg"),
+        original: tcmSrc,
         description: 'Traditional Chinese Medicine'
       }
     ]
@@ -73,7 +75,7 @@ export default class Home extends React.Component {
           <div class="bio-inner">
             <div class="huawang-wrapper">
               <h2>Meet the Expert</h2>
-              <img src={require("./../../assets/huawang.jpg")} class="huawang-home"/>
+              <img src="./../../assets/huawang.jpg" class="huawang-home"/>
               <Link to="about" class="about-link">About Hua Wang</Link>
             </div>
             <div class="bio-summary">

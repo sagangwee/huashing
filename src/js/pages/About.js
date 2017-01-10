@@ -11,7 +11,7 @@ export default class About extends React.Component {
 			<h1 class="page-title">About</h1>
 			<div class="about-container">
 				<div class="name-module">
-					<img src={require("./../../assets/huawang.jpg")} class="huawang"/>
+					<img src={"./../../assets/huawang.jpg"} class="huawang"/>
 					<div class="title-module">
 						<h1>Hua Wang LAc</h1>
 						<h2 class="headline-module">Acupuncture Specialist </h2>

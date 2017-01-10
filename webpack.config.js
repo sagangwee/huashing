@@ -1,6 +1,7 @@
 var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, "src"),
@@ -13,7 +14,7 @@ module.exports = {
         loader: 'babel',
         exclude: /.*node_modules((?!localModule).)*$/,
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react', 'react-hmre']
         }
       },
       {
@@ -26,8 +27,11 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"]
+        test: /\.scss/,
+        loader: ExtractTextPlugin.extract({
+        fallbackLoader: "style-loader",
+        loader: "css-loader!sass-loader",
+        }),
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -50,5 +54,6 @@ module.exports = {
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+    new ExtractTextPlugin('bundle.css')
   ],
 };

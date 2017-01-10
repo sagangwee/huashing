@@ -18,17 +18,17 @@ export default class Finances extends React.Component {
             <div class="payment-methods center-text">
             	<ul>
 		        	<li>
-		        		<img src="./../../static/img/check.jpg" class="finance-img"/>
+		        		<img src="img/check.jpg" class="finance-img"/>
 						<div>Check</div>
 		        	</li>
 
 		        	<li>
-		        		<img src="./../../static/img/mastercard.png" class="finance-img mastercard"/>
+		        		<img src="img/mastercard.png" class="finance-img mastercard"/>
 		        		<div>Mastercard</div>
 		        	</li>
 
 		        	<li>
-		        		<img src="./../../static/img/visa.png" class="finance-img visa"/>
+		        		<img src="img/visa.png" class="finance-img visa"/>
 		        		<div>Visa</div>
 					</li>
   	        	</ul>
@@ -39,26 +39,26 @@ export default class Finances extends React.Component {
             <h2 class="center-text">Accepted Insurance Plans</h2>
             <div class="insurance">
             	<ul>
-	  	        	<li><img src="./../../static/img/insurance/aetna.png"/></li>
-	            	<li><img src="./../../static/img/insurance/amerigroup.png"/></li>
-	            	<li><img src="./../../static/img/insurance/amerihealth.png"/></li>
-	            	<li><img src="./../../static/img/insurance/anthem.jpg"/></li>
-	            	<li><img src="./../../static/img/insurance/beech-street.png"/></li>
+	  	        	<li><img src="img/insurance/aetna.png"/></li>
+	            	<li><img src="img/insurance/amerigroup.png"/></li>
+	            	<li><img src="img/insurance/amerihealth.png"/></li>
+	            	<li><img src="img/insurance/anthem.jpg"/></li>
+	            	<li><img src="img/insurance/beech-street.png"/></li>
 
-	  	        	<li><img src="./../../static/img/insurance/blue.png"/></li>
-	            	<li><img src="./../../static/img/insurance/cigna.jpg"/></li>
-	            	<li><img src="./../../static/img/insurance/empire.jpg"/></li>
-	            	<li><img src="./../../static/img/insurance/first-choice-health.png"/></li>
+	  	        	<li><img src="img/insurance/blue.png"/></li>
+	            	<li><img src="img/insurance/cigna.jpg"/></li>
+	            	<li><img src="img/insurance/empire.jpg"/></li>
+	            	<li><img src="img/insurance/first-choice-health.png"/></li>
 
-	  	        	<li><img src="./../../static/img/insurance/great-west.png"/></li>
-	            	<li><img src="./../../static/img/insurance/health-net.png"/></li>
-	            	<li><img src="./../../static/img/insurance/horizon.png"/></li>
-	            	<li><img src="./../../static/img/insurance/humana.png"/></li>
+	  	        	<li><img src="img/insurance/great-west.png"/></li>
+	            	<li><img src="img/insurance/health-net.png"/></li>
+	            	<li><img src="img/insurance/horizon.png"/></li>
+	            	<li><img src="img/insurance/humana.png"/></li>
 
-	  	        	<li><img src="./../../static/img/insurance/oxford.png"/></li>
-	            	<li><img src="./../../static/img/insurance/triwest.jpg"/></li>
-	            	<li><img src="./../../static/img/insurance/united.jpg"/></li>
-	            	<li><img src="./../../static/img/insurance/wellpoint.png"/></li>
+	  	        	<li><img src="img/insurance/oxford.png"/></li>
+	            	<li><img src="img/insurance/triwest.jpg"/></li>
+	            	<li><img src="img/insurance/united.jpg"/></li>
+	            	<li><img src="img/insurance/wellpoint.png"/></li>
             	</ul>
             </div>
           </div>

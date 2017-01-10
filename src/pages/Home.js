@@ -27,8 +27,8 @@ export default class Home extends React.Component {
   }
 
   render() {
-    const acupunctureSrc = "./../../static/img/carousel/acupuncture-cc-650.jpg";
-    const tcmSrc = "./../../static/img/carousel/tcm-cc-650.jpg";
+    const acupunctureSrc = "img/carousel/acupuncture-cc-650.jpg";
+    const tcmSrc = "img/carousel/tcm-cc-650.jpg";
     const images = [
       {
         original: acupunctureSrc,
@@ -75,7 +75,7 @@ export default class Home extends React.Component {
           <div class="bio-inner">
             <div class="huawang-wrapper">
               <h2>Meet the Expert</h2>
-              <img src="./../../static/img/huawang.jpg" class="huawang-home"/>
+              <img src="img/huawang.jpg" class="huawang-home"/>
               <Link to="about" class="about-link">About Hua Wang</Link>
             </div>
             <div class="bio-summary">

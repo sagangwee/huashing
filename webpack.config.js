@@ -13,7 +13,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'stage-0'],
+          presets: ['react', 'es2015', 'stage-0', 'react-hmre'],
           plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
         }
       },
@@ -31,8 +31,9 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/src/",
-    filename: "static/js/client.min.js"
+    path: path.join(__dirname, 'src', 'static', 'js'),
+    publicPath: "/js/",
+    filename: "client.min.js"
   },
   plugins: debug ? [] : [
     new webpack.DefinePlugin({

@@ -9,11 +9,19 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.js$/,
+        loader: 'babel',
+        exclude: /.*node_modules((?!localModule).)*$/,
+        query: {
+          presets: ['es2015', 'react']
+        }
+      },
+      {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'stage-0', 'react-hmre'],
+          presets: debug ? ['react', 'es2015', 'stage-0', 'react-hmre'] : ['react', 'es2015', 'stage-0']
           plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
         }
       },

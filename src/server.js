@@ -9,7 +9,7 @@ import routes from './routes';
 
 // initialize the server and configure support for ejs templates
 const app = new Express();
-// const server = new Server(app);
+const server = new Server(app);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -52,7 +52,7 @@ app.get('*', (req, res) => {
 // start the server
 const port = process.env.PORT || 3000;
 const env = process.env.NODE_ENV || 'production';
-app.listen(port, err => {
+server.listen(port, err => {
   if (err) {
     return console.error(err);
   }

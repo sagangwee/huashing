@@ -1,15 +1,16 @@
 import path from 'path';
-// import { Server } from 'http';
 import Express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import routes from './routes';
 // import NotFoundPage from './components/NotFoundPage';
+import nodemailer from 'nodemailer';
 
 // initialize the server and configure support for ejs templates
 const app = Express();
-// const server = new Server(app);
+
+var isProduction = process.env.NODE_ENV === 'production';
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -48,6 +49,12 @@ app.get('*', (req, res) => {
     }
   );
 });
+
+app.post('/contact', contact);
+
+function contact(req, res) {
+  // node mailer stuff
+}
 
 // start the server
 const port = process.env.PORT || 3000;

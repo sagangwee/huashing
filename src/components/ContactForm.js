@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "../components/Button";
 import {Grid, Row, Column} from 'react-cellblock';
+import * as ContactActions from "../actions/ContactActions";
+import ContactStore from "../stores/ContactStore";
 
 export default class ContactForm extends React.Component {
   constructor(props) {
@@ -17,7 +19,7 @@ export default class ContactForm extends React.Component {
 
   handleSubmit(event) {
     console.log("form submitted.");
-    event.preventDefault();
+    ContactActions.submitContactForm();
   }
 
   render() {

@@ -13,12 +13,12 @@ export default class ContactForm extends React.Component {
       email: '', 
       phone: '', 
       canSubmit: false,
-      buttonClass: "button",
       buttonText: "Send Message"
     };
 
     this.enableButton = this.enableButton.bind(this);
     this.disableButton = this.disableButton.bind(this);
+    this.updateButton = this.updateButton.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleValidSubmit = this.handleValidSubmit.bind(this);
   }
@@ -51,12 +51,12 @@ export default class ContactForm extends React.Component {
   handleValidSubmit(data) {
     console.log("valid form submitted.");
     ContactActions.sendEmail(data);
-    updateButton();
+    this.updateButton();
   }
 
   updateButton() {
+    this.disableButton;
     this.setState({
-      buttonClass: "button button-disabled",
       buttonText: "Sent!"
     });
   }
@@ -68,7 +68,7 @@ export default class ContactForm extends React.Component {
         <Input name="email" placeholder="Email" value="" validations="isEmail" validationError="This is not a valid email" required/>
         <Input name="phone" placeholder="Phone" value=""/>
         <Input name="message" placeholder="Message" type="textarea" value="" required/>
-        <input type="submit" value={this.state.buttonText} class={this.state.buttonClass} disabled={!this.state.canSubmit} />
+        <input type="submit" value={this.state.buttonText} class="button" disabled={!this.state.canSubmit} />
       </Formsy.Form>
     );
   }

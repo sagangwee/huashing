@@ -186,6 +186,8 @@
   @extend .home-section;
   color: #555555;
   background: #FFF3EA;
+  padding: 12vh 15vw;
+  margin-bottom: -2em;
 
   h1 {
   	text-align: center;
@@ -242,6 +244,8 @@
 .testimonials-section {
   @extend .appointment-section;
   background: white;
+  padding: 20vh 15vw;
+  margin-bottom: 0;
 }
 
 #who {

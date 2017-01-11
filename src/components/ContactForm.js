@@ -1,16 +1,31 @@
 import React from "react";
 import Button from "../components/Button";
-import {Grid, Row, Column} from 'react-cellblock';
 import * as ContactActions from "../actions/ContactActions";
 import ContactStore from "../stores/ContactStore";
+import Formsy from 'formsy-react';
+import Input from './Input';
 
 export default class ContactForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {name: '', email: '', phone: ''};
+  constructor() {
+    super();
+    this.state = {name: '', email: '', phone: '', canSubmit: false};
 
+    this.enableButton = this.enableButton.bind(this);
+    this.disableButton = this.disableButton.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  enableButton() {
+    this.setState({
+      canSubmit: true
+    });
+  }
+
+  disableButton() {
+    this.setState({
+      canSubmit: false
+    });
   }
 
   handleChange(event) {
@@ -24,13 +39,13 @@ export default class ContactForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input class="input" name="name" placeholder="Name" value={this.state.name} onChange={this.handleChange}></input>
-        <input class="input" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange}></input>
-        <input class="input" name="phone" placeholder="Phone" value={this.state.phone} onChange={this.handleChange}></input>
+      <Formsy.Form onValidSubmit={this.handleSubmit} onValid={this.enableButton} onInvalid={this.disableButton}>
+        <Input name="name" placeholder="Name" required/>
+        <Input name="email" placeholder="Email" required/>
+        <Input name="phone" placeholder="Phone" required/>
         <textarea class="input messageBox" placeholder="Message"></textarea>
-        <input type="submit" value="Send Message" class="button" />
-      </form>
+        <input type="submit" value="Send Message" class="button" disabled={!this.state.canSubmit} />
+      </Formsy.Form>
     );
   }
 }

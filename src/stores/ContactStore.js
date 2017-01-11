@@ -8,15 +8,8 @@ class ContactStore extends EventEmitter {
     this.data = {name: '', email: '', phone: ''};
   }
 
-  createTodo(text) {
-    const id = Date.now();
-
-    this.todos.push({
-      id,
-      text,
-      complete: false,
-    });
-
+  submitForm(data) {
+    this.data = data;
     this.emit("change");
   }
 
@@ -27,7 +20,7 @@ class ContactStore extends EventEmitter {
   handleActions(action) {
     switch(action.type) {
       case "SUBMIT_FORM": {
-        this.createTodo(action.text);
+        this.submitForm(action.data);
         break;
       }
       case "RECEIVE_TODOS": {
@@ -40,7 +33,7 @@ class ContactStore extends EventEmitter {
 
 }
 
-const todoStore = new TodoStore;
-dispatcher.register(todoStore.handleActions.bind(todoStore));
+const contactStore = new ContactStore;
+dispatcher.register(contactStore.handleActions.bind(contactStore));
 
-export default todoStore;
+export default contactStore;

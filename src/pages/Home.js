@@ -17,13 +17,17 @@ export default class Home extends React.Component {
           item.description &&
             <span className='image-gallery-description'>
               <div className='image-gallery-description-inner'>
-                {item.description}
-                <div className='subheading'>{item.subHeading}</div>
+                <div className='fadeInLeft'>{item.description}</div>
+                <div className='subheading fadeInRight'>{item.subHeading}</div>
               </div>
             </span>
         }
       </div>
     )
+  }
+
+  handleSlide(currentIndex) {
+    console.log('Image loaded');
   }
 
   render() {
@@ -47,6 +51,7 @@ export default class Home extends React.Component {
           ref={i => this._imageGallery = i}
           items={images}
           autoPlay={true}
+          onSlide={this.handleImageLoad}
           renderItem={this.renderItem}
           showBullets={true}
           showFullscreenButton={false}

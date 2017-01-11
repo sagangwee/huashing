@@ -13,7 +13,7 @@ export default class Footer extends React.Component {
 
     return (
       <footer style={footerStyle}>
-        <p>Copyright &copy; Huashing Acupuncture</p>
+        <p>Copyright &copy; Huashing Acupuncture 2017</p>
       </footer>
     );
   }

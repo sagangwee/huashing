@@ -10,7 +10,7 @@ export default class TestimonialCarousel extends React.Component {
   componentDidMount() {
     setTimeout( () => {
       this.updateTestimonial();
-    }, 4000);
+    }, 5000);
   }
 
   shouldComponentUpdate() {
@@ -28,7 +28,6 @@ export default class TestimonialCarousel extends React.Component {
         currentIndex: this.state.currentIndex + 1
       });
     }
-    console.log(this.state);
   }
 
   render() {
@@ -46,7 +45,7 @@ export default class TestimonialCarousel extends React.Component {
           transitionAppearTimeout={1000}
           transitionEnterTimeout={1000}
           transitionLeave={false}>
-          <div class="home-testimonial" key={testimonial}>
+          <div class="testimonial-carousel" key={testimonial}>
             "{testimonial}"
           </div>
         </ReactCSSTransitionGroup>

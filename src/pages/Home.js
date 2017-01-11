@@ -130,13 +130,13 @@ export default class Home extends React.Component {
           </div>
           <div class="appointment-location">
             <div class="location">
-              <h2> Location 1 </h2>
+              <h2> <a href="https://goo.gl/maps/DwMJ6Qn9e7M2">Location 1</a></h2>
               10630 N 71st PL <br/> 
               Suite 1 <br/>
               Scottsdale, Arizona 85254
             </div>
             <div class="location">
-              <h2> Location 2 </h2>
+              <h2> <a href="https://goo.gl/maps/55zSiPzWUF62">Location 2</a> </h2>
               4425E Agave Rd <br/> 
               Suite 106 <br/>
               Phoenix, Arizona 85044 

@@ -57,10 +57,4 @@ p {
 
 a {
   text-decoration: none;
-  color: #96d019;
-  font-size: 3vmin;
-
-  @include small {
-    font-size: 16px;
-  }
 }

@@ -149,6 +149,11 @@
 	text-align: center;
 	margin-top: 2vh;
 	color: #3BB98A;
+	font-size: 3vmin;
+
+	@include small {
+	  font-size: 16px;
+	}
 
 	&:hover {
       color: #75a214;
@@ -212,6 +217,15 @@
   width: calc((100% - 20vw)/2);
   background-color: #efefef;
   padding: 4vh 0;
+
+  a {
+  	color: #555555;
+
+  	&:hover {
+  	  color: #96d019;
+	  text-decoration: underline !important;
+  	}
+  }
 
   h2 {
   	margin-bottom: 0.5em;

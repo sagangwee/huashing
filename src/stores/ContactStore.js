@@ -20,7 +20,7 @@ class ContactStore extends EventEmitter {
   handleActions(action) {
     switch(action.type) {
       case "SUBMITTED_FORM": {
-        this.submitForm(action.data);
+        this.updateButton(action.data);
         break;
       }
     }

@@ -6,7 +6,8 @@ import { match, RouterContext } from 'react-router';
 import routes from './routes';
 // import NotFoundPage from './components/NotFoundPage';
 import nodemailer from 'nodemailer';
-import config from 'config';
+import bodyParser from 'body-parser';
+import config from './config';
 
 // initialize the server and configure support for ejs templates
 const app = Express();
@@ -17,6 +18,8 @@ app.set('views', path.join(__dirname, 'views'));
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'static')));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // universal routing and rendering
 app.get('*', (req, res) => {
@@ -56,6 +59,7 @@ app.post('/contact', contact);
 function contact(req, res) {
   // node mailer stuff
   const data = req.body;
+  console.log(data);
   const smtpConfig = {
     host: 'smtp.gmail.com',
     port: 465,
@@ -73,8 +77,8 @@ function contact(req, res) {
       from: data.email, // sender address
       to: 'owenjiang6969@gmail.com', // list of receivers
       subject: 'Huashing Acupuncture Contact Form', // Subject line
-      html: `<b>Name: </b> ${data.name} \n 
-             <b>Phone: </b> ${data.phone} \n
+      html: `<b>Name: </b> ${data.name} <br> 
+             <b>Phone: </b> ${data.phone}
              <p>${data.message}</p>`
   }
 

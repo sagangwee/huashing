@@ -1,6 +1,7 @@
 import dispatcher from "../dispatcher";
 
 export function sendEmail(data) {
+  console.log("sendEmail action", data);
   return fetch('/contact', {
     method: 'post',
     body: JSON.stringify(data),
@@ -10,7 +11,7 @@ export function sendEmail(data) {
     }
   })
     .then(checkStatus)
-    .then(()=>console.log('sent email'))
+    .then(()=>console.log('post request to /contact'))
 }
 
 function checkStatus(response) {

@@ -7,7 +7,7 @@ const Input = React.createClass({
       canSubmit: false
     }
   },
-  
+
   // Add the Formsy Mixin
   mixins: [Formsy.Mixin],
 
@@ -31,9 +31,19 @@ const Input = React.createClass({
 
     const { 
       placeholder,
-      name
+      name,
+      type
     } = this.props;
 
+    if (type == "textarea") {
+	  return (
+        <div className={className}>
+          <textarea class="input messageBox" name={name} placeholder="Message" onChange={this.changeValue} value={this.getValue()}></textarea>
+          <span class="validation-error">{errorMessage}</span>
+        </div>
+      );
+    }
+    
     return (
       <div className={className}>
         <input class="input" name={name} placeholder={placeholder} type="text" onChange={this.changeValue} value={this.getValue()}/>

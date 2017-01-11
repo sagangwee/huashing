@@ -16,6 +16,15 @@ export default class ContactForm extends React.Component {
     this.handleValidSubmit = this.handleValidSubmit.bind(this);
   }
 
+  mapInputs(inputs) {
+    return {
+      'name': inputs.name,
+      'email': inputs.email,
+      'phone': inputs.phone,
+      'message': inputs.message
+    };
+  }
+
   enableButton() {
     this.setState({
       canSubmit: true
@@ -39,11 +48,11 @@ export default class ContactForm extends React.Component {
 
   render() {
     return (
-      <Formsy.Form onValidSubmit={this.handleValidSubmit} onValid={this.enableButton} onInvalid={this.disableButton}>
+      <Formsy.Form onValidSubmit={this.handleValidSubmit} onValid={this.enableButton} onInvalid={this.disableButton} mapping={this.mapInputs}>
         <Input name="name" placeholder="Name" value="" required/>
         <Input name="email" placeholder="Email" value="" validations="isEmail" validationError="This is not a valid email" required/>
         <Input name="phone" placeholder="Phone" value=""/>
-        <textarea class="input messageBox" placeholder="Message"></textarea>
+        <Input name="message" placeholder="Message" type="textarea" value="" required/>
         <input type="submit" value="Send Message" class="button" disabled={!this.state.canSubmit} />
       </Formsy.Form>
     );

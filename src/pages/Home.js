@@ -4,6 +4,16 @@ import Button from "../components/Button";
 import { Link } from "react-router";
 
 export default class Home extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      descriptionClasses: "fadeInLeft",
+      subheadingClasses: "subheading fadeInRight"
+    };
+    this.handleSlide = this.handleSlide.bind(this);
+    this.renderItem = this.renderItem.bind(this);
+  }
+
   renderItem(item) {
     const backgroundUrl = item.original;
     const itemStyle = {
@@ -17,8 +27,8 @@ export default class Home extends React.Component {
           item.description &&
             <span className='image-gallery-description'>
               <div className='image-gallery-description-inner'>
-                <div className='fadeInLeft'>{item.description}</div>
-                <div className='subheading fadeInRight'>{item.subHeading}</div>
+                <div className={this.state.descriptionClasses}>{item.description}</div>
+                <div className={this.state.subheadingClasses}>{item.subHeading}</div>
               </div>
             </span>
         }
@@ -27,7 +37,27 @@ export default class Home extends React.Component {
   }
 
   handleSlide(currentIndex) {
-    console.log('Image loaded');
+    if (currentIndex == 0) {
+      this.setState({ 
+        descriptionClasses: "",
+        subheadingClasses: ""
+      });
+      setTimeout(() => {
+        this.setState({ 
+          descriptionClasses: "fadeInLeft",
+          subheadingClasses: "subheading fadeInRight"
+        });
+      }, 1);
+    } else {
+      this.setState({ 
+        descriptionClasses: ""
+      });
+      setTimeout(() => {
+        this.setState({ 
+          descriptionClasses: "fadeInRight"
+        });
+      }, 1);
+    }
   }
 
   render() {
@@ -51,7 +81,7 @@ export default class Home extends React.Component {
           ref={i => this._imageGallery = i}
           items={images}
           autoPlay={true}
-          onSlide={this.handleImageLoad}
+          onSlide={this.handleSlide}
           renderItem={this.renderItem}
           showBullets={true}
           showFullscreenButton={false}

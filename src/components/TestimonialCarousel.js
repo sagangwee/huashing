@@ -5,9 +5,11 @@ const TestimonialCarousel = function (props) {
   return (
     <div>
       <ReactCSSTransitionGroup
-        transitionName="example"
-        transitionEnterTimeout={300}
-        transitionLeaveTimeout={300}>
+        transitionName="bounceInUp"
+        transitionAppear={true}
+        transitionAppearTimeout={1000}
+        transitionEnterTimeout={1000}
+        transitionLeave={false}>
         <div class="home-testimonial" key={props.testimonial}>
           "{props.testimonial}"
         </div>

@@ -257,13 +257,17 @@
     line-height: 30px;
 }
 
-.bounceInUp-enter {
+.bounceInUp-appear {
     -webkit-animation-name: bounceInUp;
     animation-name: bounceInUp;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+}
+
+.bounceInUp-enter {
+  @extend .bounceInUp-appear;
 }
 
 @keyframes bounceInUp {
@@ -308,3 +312,13 @@
   opacity: 0.01;
   transition: opacity 300ms ease-in;
 }
+
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+

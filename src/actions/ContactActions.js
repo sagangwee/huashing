@@ -1,22 +1,25 @@
 import dispatcher from "../dispatcher";
 
-export function submitContactForm() {
-  // axios("http://someurl.com/somedataendpoint").then((data) => {
-  //   console.log("got the data!", data);
-  // })
-  dispatcher.dispatch({type: "FETCH_TODOS"});
-  setTimeout(() => {
-    dispatcher.dispatch({type: "RECEIVE_TODOS", todos: [
-      {
-        id: 8484848484,
-        text: "Go Shopping Again",
-        complete: false
-      },
-      {
-        id: 6262627272,
-        text: "Hug Wife",
-        complete: true
-      },
-    ]});
-  }, 1000);
+export function sendEmail(data) {
+  return fetch('/contact', {
+    method: 'post',
+    body: JSON.stringify(data),
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(checkStatus)
+    .then(()=>console.log('sent email'))
+}
+
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+    dispatcher.dispatch({type: "SUBMITTED_FORM"});
+    return response
+  } else {
+    var error = new Error(response.statusText)
+    error.response = response
+    throw error
+  }
 }

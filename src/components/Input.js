@@ -2,6 +2,12 @@ import React from "react";
 import Formsy from 'formsy-react';
 
 const Input = React.createClass({
+  getInitialState() {
+    return {
+      canSubmit: false
+    }
+  },
+  
   // Add the Formsy Mixin
   mixins: [Formsy.Mixin],
 
@@ -23,12 +29,15 @@ const Input = React.createClass({
     // or the server has returned an error message
     const errorMessage = this.getErrorMessage();
 
-    const { placeholder } = this.props;
+    const { 
+      placeholder,
+      name
+    } = this.props;
 
     return (
       <div className={className}>
-        <input class="input" placeholder={placeholder} type="text" onChange={this.changeValue} value={this.getValue()}/>
-        <span>{errorMessage}</span>
+        <input class="input" name={name} placeholder={placeholder} type="text" onChange={this.changeValue} value={this.getValue()}/>
+        <span class="validation-error">{errorMessage}</span>
       </div>
     );
   }

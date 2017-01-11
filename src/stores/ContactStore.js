@@ -19,13 +19,8 @@ class ContactStore extends EventEmitter {
 
   handleActions(action) {
     switch(action.type) {
-      case "SUBMIT_FORM": {
+      case "SUBMITTED_FORM": {
         this.submitForm(action.data);
-        break;
-      }
-      case "RECEIVE_TODOS": {
-        this.todos = action.todos;
-        this.emit("change");
         break;
       }
     }

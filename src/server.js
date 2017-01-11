@@ -6,6 +6,7 @@ import { match, RouterContext } from 'react-router';
 import routes from './routes';
 // import NotFoundPage from './components/NotFoundPage';
 import nodemailer from 'nodemailer';
+import config from 'config';
 
 // initialize the server and configure support for ejs templates
 const app = Express();
@@ -54,6 +55,37 @@ app.post('/contact', contact);
 
 function contact(req, res) {
   // node mailer stuff
+  const data = req.body;
+  const smtpConfig = {
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // use SSL
+    auth: {
+        user: config.GMAIL_USERNAME,
+        pass: config.GMAIL_PASSWORD
+    }
+  };
+
+  var transporter = nodemailer.createTransport(smtpConfig);
+
+  // setup e-mail data with unicode symbols
+  var mailOptions = {
+      from: data.email, // sender address
+      to: 'owenjiang6969@gmail.com', // list of receivers
+      subject: 'Huashing Acupuncture Contact Form', // Subject line
+      html: `<b>Name: </b> ${data.name} \n 
+             <b>Phone: </b> ${data.phone} \n
+             <p>${data.message}</p>`
+  }
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, function(error, info){
+      if(error){
+          return console.log(error);
+      }
+      console.log('Message sent: ' + info.response);
+  });
+  res.sendStatus(200);
 }
 
 // start the server

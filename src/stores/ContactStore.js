@@ -17,6 +17,7 @@ class ContactStore extends EventEmitter {
   updateButton() {
     this.disableButton();
     this.data.buttonText = "Sent!";
+    console.log("updated button in store", this.data);
     this.emit("change");
   }
 

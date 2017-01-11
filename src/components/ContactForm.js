@@ -9,12 +9,25 @@ export default class ContactForm extends React.Component {
   constructor() {
     super();
     this.state = ContactStore.getAll();
-
+    this.getData = this.getData.bind(this);
     this.enableButton = this.enableButton.bind(this);
     this.disableButton = this.disableButton.bind(this);
-    this.updateButton = this.updateButton.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleValidSubmit = this.handleValidSubmit.bind(this);
+  }
+
+  componentWillMount() {
+    ContactStore.on("change", this.getData);
+  }
+
+  componentWillUnmount() {
+    ContactStore.removeListener("change", this.getData);
+  }
+
+  getData() {
+    this.setState(
+      ContactStore.getAll()
+    );
   }
 
   mapInputs(inputs) {

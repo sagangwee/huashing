@@ -130,6 +130,11 @@ export default class Home extends React.Component {
           </div>
         </section>
 
+        <section class="testimonials-section">
+          <h1>What Patients Are Saying</h1>
+          <TestimonialCarousel testimonials={testimonials} currentIndex={0}/>
+        </section>
+
         <section class="appointment-section">
           <h1>Make an Appointment</h1>
           <div class="appointment-phone">
@@ -152,10 +157,6 @@ export default class Home extends React.Component {
           </div>
         </section>
 
-        <section class="testimonials-section">
-          <h1>What Patients Are Saying</h1>
-          <TestimonialCarousel testimonials={testimonials} currentIndex={0}/>
-        </section>
       </div>
     );
   }

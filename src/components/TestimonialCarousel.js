@@ -13,11 +13,6 @@ export default class TestimonialCarousel extends React.Component {
     }, 5000);
   }
 
-  shouldComponentUpdate() {
-    this.updateTestimonial();
-    return true;
-  }
-
   updateTestimonial() {
     if (this.state.currentIndex >= this.state.testimonials.length - 1) {
       this.setState({
@@ -28,6 +23,10 @@ export default class TestimonialCarousel extends React.Component {
         currentIndex: this.state.currentIndex + 1
       });
     }
+    console.log(this.state);
+    setTimeout( () => {
+      this.updateTestimonial();
+    }, 5000);
   }
 
   render() {

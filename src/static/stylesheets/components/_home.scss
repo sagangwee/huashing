@@ -185,7 +185,7 @@
 .appointment-section {
   @extend .home-section;
   color: #555555;
-  background-color: white;
+  background: #FFF3EA;
 
   h1 {
   	text-align: center;
@@ -205,6 +205,7 @@
   flex-wrap: wrap;
   text-align: center;
   margin-top: 10vh;
+  color: #3B3B3B;
 
   @include medium {
   	margin-top: 4vh;
@@ -217,6 +218,7 @@
   width: calc((100% - 20vw)/2);
   background-color: #efefef;
   padding: 4vh 0;
+  background: white;
 
   a {
   	color: #555555;
@@ -239,7 +241,7 @@
 
 .testimonials-section {
   @extend .appointment-section;
-  background: #FFF3EA;
+  background: white;
 }
 
 #who {

@@ -236,3 +236,57 @@
   	margin: 4vh 0;
   }
 }
+
+.testimonials-section {
+  @extend .appointment-section;
+  background: #FFF3EA;
+}
+
+#who {
+	float: left;
+    clear: both;
+    display: block;
+    margin: 0px 10% 100px 10%;
+    padding: 0px;
+    width: 80%;
+    text-align: center;
+    color: #6DBCDB;
+    font-size: 30px;
+    font-size: 1.875rem;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 30px;
+}
+
+.bounceInUp {
+    -webkit-animation-name: bounceInUp;
+    animation-name: bounceInUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes bounceInUp {
+	0% {
+	    opacity: 0;
+	    -webkit-transform: translateY(2000px);
+	    -ms-transform: translateY(2000px);
+	    transform: translateY(2000px);
+	}
+	60% {
+	    opacity: 1;
+	    -webkit-transform: translateY(-30px);
+	    -ms-transform: translateY(-30px);
+	    transform: translateY(-30px);
+	}
+	80% {
+	    -webkit-transform: translateY(10px);
+	    -ms-transform: translateY(10px);
+	    transform: translateY(10px);
+	}
+	100% {
+	    -webkit-transform: translateY(0);
+	    -ms-transform: translateY(0);
+	    transform: translateY(0);
+	}
+}

@@ -5,12 +5,23 @@ import dispatcher from "../dispatcher";
 class ContactStore extends EventEmitter {
   constructor() {
     super()
-    this.data = {name: '', email: '', phone: ''};
+    this.data = {
+      name: '', 
+      email: '', 
+      phone: '', 
+      canSubmit: false,
+      buttonText: "Send Message"
+    };
   }
 
-  submitForm(data) {
-    this.data = data;
+  updateButton() {
+    this.disableButton();
+    this.data.buttonText = "Sent!";
     this.emit("change");
+  }
+
+  disableButton() {
+    this.data.canSubmit = false;
   }
 
   getAll() {
@@ -20,7 +31,7 @@ class ContactStore extends EventEmitter {
   handleActions(action) {
     switch(action.type) {
       case "SUBMITTED_FORM": {
-        this.updateButton(action.data);
+        this.updateButton();
         break;
       }
     }

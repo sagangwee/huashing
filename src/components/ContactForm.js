@@ -8,13 +8,7 @@ import Input from './Input';
 export default class ContactForm extends React.Component {
   constructor() {
     super();
-    this.state = {
-      name: '', 
-      email: '', 
-      phone: '', 
-      canSubmit: false,
-      buttonText: "Send Message"
-    };
+    this.state = ContactStore.getAll();
 
     this.enableButton = this.enableButton.bind(this);
     this.disableButton = this.disableButton.bind(this);
@@ -51,14 +45,6 @@ export default class ContactForm extends React.Component {
   handleValidSubmit(data) {
     console.log("valid form submitted.");
     ContactActions.sendEmail(data);
-    this.updateButton();
-  }
-
-  updateButton() {
-    this.disableButton;
-    this.setState({
-      buttonText: "Sent!"
-    });
   }
 
   render() {

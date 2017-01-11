@@ -1,0 +1,11 @@
+.testimonial {
+	border-top: 1px solid #eee;
+	
+	&:first-child {
+		border: none;
+	}
+}
+
+.reviewer {
+	font-size: 3vmin;
+}

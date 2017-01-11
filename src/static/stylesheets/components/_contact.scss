@@ -1,0 +1,33 @@
+.input {
+	border: solid 1px;
+	border-color: #dedede;
+	border-radius: 5px;
+	color: #8a8a8a;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	margin-bottom: 1em;
+	padding: 0.85em 1.15em;
+	width: 90%;
+}
+
+.input:hover {
+	border-color: #45445a;
+}
+
+.input:focus {
+	outline: none !important;
+	border-color: #96d019;
+}
+
+.messageBox {
+	min-height: 8em;
+}
+
+.responsive-col {
+  margin-bottom: 4vh;
+}
+
+.validation-error {
+  color: red;
+  margin: 5px 0;
+  display: inline-block;
+}

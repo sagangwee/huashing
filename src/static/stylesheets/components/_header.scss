@@ -1,0 +1,67 @@
+header {
+	text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items:center;
+}
+
+.header-address {
+  width: 30%;
+
+  div {
+    margin-bottom: 0.5em;
+  }
+
+  @include large {
+    display: none;
+  }
+
+}
+
+.header-title {
+	font-family: 'Source Sans Pro', sans-serif;
+	letter-spacing: 0.3em;
+	font-size: 2vw;
+	margin-top: 0;
+	margin-bottom: 0;
+	color: #78c272;
+	font-weight: 800;
+	text-transform: uppercase;
+	line-height: 1.2em;
+  width: 40%;
+
+  h1 {
+    &:first-of-type {
+      margin-top: 0.5em;
+    } 
+
+    &:last-child {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  @include large {
+  	font-size: 32px;
+    width: 100%;
+  }
+
+  @include small {
+    font-size: 24px;
+    width: 100%;
+  }
+}
+
+.header-phone {
+  width: 30%;
+  color: #96d019;
+
+  @include large {
+    display: none;
+  }
+}
+
+.fa-map-marker, .fa-phone {
+  color: #96d019;
+  margin-right: 0.5em;
+}

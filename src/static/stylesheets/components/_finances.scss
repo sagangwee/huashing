@@ -1,0 +1,95 @@
+.finance-section {
+	border-bottom: 1px solid #eee;
+	padding-bottom: 4vh;
+	margin-top: 4vh;
+
+	&:first-child {
+		margin: 0;
+	}
+
+	&:last-child {
+		border: none;
+	}
+}
+
+.finance-module {
+	border: 2px solid rgba(21,39,68,.1);
+	box-sizing: border-box;
+	margin: 0 auto;
+	margin-top: 2vh;
+	padding: 4vh 4vw;
+}
+
+.price {
+	@extend .finance-module;
+	width: 60%;
+	text-align: center;
+	color: #78c272;
+
+	span {
+		font-size: 6vh;
+    	line-height: 8vh;
+	}
+
+	@include small {
+	  width: 100%;
+	}
+}
+
+.payment-methods {
+  @extend .finance-module;
+  width: 75%;
+
+  ul {
+    padding: 0;
+    text-align: center;
+
+	li {
+	  margin: 30px;
+	  display: inline-block;
+
+	  img {
+	  	max-height: 70px;
+	  	vertical-align: middle;
+	  }
+    }
+  }
+
+  @include small {
+    width: 100%;
+  }
+}
+
+.insurance {
+  @extend .finance-module;
+  width: 90%;
+  padding: 4vh 2vw;
+
+  ul {
+    padding: 0;
+    text-align: center;
+
+	li {
+	  margin: 15px;
+	  display: inline-block;
+
+	  img {
+	  	max-height: 50px;
+	  	vertical-align: middle;
+	  }
+    }
+  }
+
+  @include small {
+    width: 100%;
+  }
+}
+
+.logo {
+	margin-top: 4vh;
+	margin-right: 2vw;
+
+	&:first-child {
+		margin: 0;
+	}
+}

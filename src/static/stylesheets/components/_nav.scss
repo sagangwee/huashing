@@ -1,0 +1,167 @@
+.nav {
+	position: relative;
+	border-color: #dedede;
+	margin-top: 0;
+	border-top: 1px solid;
+	color: #8a8a8a;
+	text-align: center;
+	padding: 1.4em 0 1.15em 0;
+	margin: 0 auto;
+
+	ul {
+		display: inline-block;
+		/*width: 1070px;*/
+	    list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		@include medium {
+		  display: none;
+		}
+
+	}
+
+	.nav-active {
+	  @include medium {
+	    display: block;
+	  }
+	}
+
+	@include medium {
+	  width: 100%;
+	  padding: 35px 0 0;
+	}
+}
+
+.nav-list > li {
+	float: left;
+	position: relative;
+	display: block;
+}
+
+.nav-list > li > a {
+	font-size: 1em;
+	line-height: 1.2857em;
+	font-weight: 600;
+	text-decoration: none;
+	color: #45445a;
+}
+
+.nav-list > li + li > a {
+	border-left: 1px solid;
+	border-color: rgba(222,222,222,0.5);
+	padding-left: .88em;
+	margin-left: .88em;
+
+	@include medium {
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+} 
+
+.nav-fixed {
+	position: fixed;
+	background-color: #fff;
+	width: 100%;
+    top: 0;
+    border-bottom: 2px solid;
+    border-top: none;
+    animation: slide 0.25s linear;
+    z-index: 10000;
+}
+
+@keyframes slide {
+	0% {
+		margin-top: -61.7px;
+	}
+
+	100% {
+		margin-top: 0px;
+	}
+}
+
+.active > a {
+	color: #78c272 !important;
+}
+
+.nav-list > li > a:hover {
+	color: #78c272 !important;
+	text-decoration: underline !important;
+
+	@include medium {
+		background-color: #e5e5e5;
+	}
+}
+
+// .nav-list a, button {
+// 	min-width: 48px;
+// 	min-height: 48px;
+// }
+
+.nav-list > .nav-item {
+	display: block;
+
+	a {
+		display: block;
+
+		@include medium {
+		  background: #f5f6f7;
+		  padding: 1.5em 1.25em;
+		}
+
+	}
+
+	@include medium {
+	  width: 100%;
+	  float: none;
+	}
+}
+
+.nav-mobile {
+  display :none; /* Hide from browsers that don't support media queries */
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  height: 20px;
+  width: 40px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+
+  .fa-bars {
+  	color: #1d9d74;
+  	font-size: 18px;
+
+  	&:hover {
+  	  color: #78c272; 
+  	}
+  }
+
+  @include medium {
+  	display: block;
+  }
+
+}
+
+/*------------------------------------*\
+    Media Queries
+\*------------------------------------*/
+
+@include medium {
+	.nav-item:first-child a {
+		border-radius:5px 0 0;
+	}
+	.nav-item:last-child a {
+		border-radius:0 0 5px 5px;
+	}
+
+	.nav-mobile-open {
+		border-radius:5px 5px 0 0;
+		-webkit-border-radius:5px 5px 0 0;
+		-moz-border-radius:5px 5px 0 0;
+	}
+}

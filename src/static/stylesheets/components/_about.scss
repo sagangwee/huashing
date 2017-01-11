@@ -1,0 +1,153 @@
+.about-container {
+	position: relative;
+    overflow: hidden;
+    height: 65vh;
+
+    @include large {
+      height: 115vh;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: $break-small) {
+      height: 900px;
+      width: 300px;
+      margin: 0 auto;
+    }
+
+}
+
+.module {
+	position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+
+    @include large {
+      left: 0px;
+      top: 0px;
+      width: 100% !important;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: $break-small) and (max-width: $break-large) {
+      left: 0px;
+      top: 0px;
+      width: 300px !important;
+    }
+
+}
+
+.name-module {
+	@extend .module;
+	background-color: #4F7F4B;
+    width: 42%;
+    height: 30vh;
+    float: left;
+}
+
+.huawang {
+	position: absolute;
+	top: calc(50% - 75px);
+	left: 1.5vw;
+
+	@include small {
+      left: 4vw;
+    }
+}
+
+.title-module {
+	position: absolute;
+	top: calc(50% - 49px);
+	left: 45%;
+	color: white;
+  width: 55%;
+
+	@include large {
+		left: 160px;
+	}
+
+	@include small {
+      left: 150px;
+    }
+
+    h1 {
+      @include small {
+      	font-size: 22px;
+      }
+    }
+
+    h2 {
+      @include small {
+      	font-size: 20px;
+      }
+    }
+
+}
+
+.summary-module {
+	@extend .module;
+	background-color: #B28160;
+    width: 55%;
+    height: 60vh;
+    margin-left: 2vw;
+    padding: 30px 40px;
+    color: white;
+    font-size: 18px;
+    right: 0;
+    top: 2vh;
+    transition-duration: 1.2s;
+
+    @include large {
+      height: 500px;
+      top: 0;
+      margin: 0;
+      transform: translate3d(0px, 395px, 0px);
+    }
+
+    @include small {
+      width: 42%;
+      height: 500px;
+      transform: translate3d(0px, 430px, 0px);
+      top: 0;
+      margin: 0;
+    }
+
+    p {
+    	@include small {
+    		font-size: 18px;
+    	}
+    }
+}
+
+.tagline {
+	margin-top: 4vh;
+}
+
+.qualifications-module {
+	@extend .module;
+	width: 42%;
+	height: 32vh;
+	background-color: #41342a !important;
+	color: white;
+	bottom: 0;
+	padding: 20px 30px;
+	transition-duration: 1.2s;
+
+	@include large {
+      transform: translate3d(0px, 190px, 0px);
+    }
+
+	@include small {
+      height: 38vh;
+      transform: translate3d(0px, 190px, 0px);
+    }
+}
+
+.qualifications-header {
+	margin-top: 2vh;
+	margin-bottom: -1vh;
+}
+
+.bold-brown {
+	color: #a67f4e;
+}

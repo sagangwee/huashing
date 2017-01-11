@@ -2,7 +2,7 @@ import React from "react";
 import ImageGallery from 'react-image-gallery';
 import Button from "../components/Button";
 import { Link } from "react-router";
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import TestimonialCarousel from "../components/TestimonialCarousel";
 
 export default class Home extends React.Component {
   constructor() {
@@ -80,11 +80,7 @@ export default class Home extends React.Component {
       "I had very painful, stiff and swollen joints due to possible rheumatiod arthritis. My doctor prescribed prednisone and a strong anti-inflammatory. Instead of taking the medication, I began acupuncture with Dr. Wang. I went two times a week for five weeks and now I am pain free!! I highly recommend Dr. Wang. She is professional and kind. She listens and adjusts her treatments to best treat the patient. You won't regret seeing Dr. Wang if you have an illness that acupuncture can treat!",
       "I have gone to Dr. Wang for the past 4 years. I tried other acupuncturists in the past, but none were as good as Hua Wang. She is a doctor trained in China. She really knows the art. I am a beautician with a salon in Scottsdale. I am glad that her office is nearby. Her fees are actually lower than many of the other acupuncturists I have gone to.",
       "Dr. Wang is an excellent practitioner, with a kind patient manner. She can also can mix herbs and perform cupping."
-    ].map((testimonial, i) => (
-      <div class="home-testimonial" key={testimonial}>
-        {testimonial}
-      </div>
-    ));
+    ];
 
     return (
       <div>
@@ -157,12 +153,7 @@ export default class Home extends React.Component {
 
         <section class="testimonials-section">
           <h1>What Patients Are Saying</h1>
-          <ReactCSSTransitionGroup
-            transitionName="bounceInUp"
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={300}>
-            {testimonials}
-          </ReactCSSTransitionGroup>
+          <TestimonialCarousel testimonial={testimonials[0]}/>
         </section>
       </div>
     );

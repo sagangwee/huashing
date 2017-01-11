@@ -53,7 +53,7 @@ export default class Home extends React.Component {
           showThumbnails={false}
           slideInterval={4000} />
 
-        <section class="home-section info-section">
+        <section class="info-section">
           <h2>Acupuncture</h2>
           <p>
             Acupuncture techniques involve stimulating specific points on the body using thin, stainless steel needles.
@@ -71,7 +71,7 @@ export default class Home extends React.Component {
 
         </section>
 
-        <section class="home-section bio-section">
+        <section class="bio-section">
           <div class="bio-inner">
             <div class="huawang-wrapper">
               <h2>Meet the Expert</h2>
@@ -83,6 +83,28 @@ export default class Home extends React.Component {
                  She specializes in pain and stress management, with a focus in neck, shoulder, and back pain.
               </p>
               <div class="bio-button-container"><Button to="treatments">See All Treatments</Button></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="appointment-section">
+          <h1>Make an Appointment</h1>
+          <div class="appointment-phone">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            (480) 951-5785
+          </div>
+          <div class="appointment-location">
+            <div class="location">
+              <h2> Location 1 </h2>
+              10630 N 71st PL <br/> 
+              Suite 1 <br/>
+              Scottsdale, Arizona 85254
+            </div>
+            <div class="location">
+              <h2> Location 2 </h2>
+              4425E Agave Rd <br/> 
+              Suite 106 <br/>
+              Phoenix, Arizona 85044 
             </div>
           </div>
         </section>

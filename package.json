@@ -31,7 +31,7 @@
     "webpack-dev-server": "^1.14.1",
     "react-image-gallery": "~0.7.10",
     "react-addons-css-transition-group": "~15.4.2",
-    "react-cell-block": "2.0.0"
+    "react-cellblock": "2.0.0"
   },
   "devDependencies": {
     "babel-preset-react-hmre": "^1.1.1",
@@ -46,6 +46,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --content-base src/static --progress --inline --hot",
+    "windev": "node_modules\.bin\webpack-dev-server --content-base src/static --progress --inline --hot",
     "postinstall": "cross-env NODE_ENV=production node_modules/.bin/webpack -p --config ./webpack.production.config.js",
     "start": "cross-env NODE_ENV=production babel-node src/server.js"
   },

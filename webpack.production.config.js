@@ -14,7 +14,7 @@ module.exports = {
         loader: 'babel',
         exclude: /.*node_modules((?!localModule).)*$/,
         query: {
-          presets: ['es2015', 'react', 'react-hmre']
+          presets: ['es2015', 'react']
         }
       },
       {

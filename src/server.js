@@ -75,7 +75,7 @@ function contact(req, res) {
   // setup e-mail data with unicode symbols
   var mailOptions = {
       from: data.email, // sender address
-      to: 'owenjiang6969@gmail.com', // list of receivers
+      to: 'huawang_usa@yahoo.com', // list of receivers
       subject: 'Huashing Acupuncture Contact Form', // Subject line
       html: `<b>Name: </b> ${data.name} <br> 
              <b>Phone: </b> ${data.phone}

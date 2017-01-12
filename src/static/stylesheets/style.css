@@ -26,7 +26,3 @@ img {
 	top: 50%;
 	transform: translateY(-50%);
 }
-
-footer > p {
-	text-align: center;
-}

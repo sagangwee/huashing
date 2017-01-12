@@ -1,0 +1,39 @@
+.footer {
+  text-align: center;
+  background-color: #f5f6f7;
+
+  .footer-address > div, .footer-phone {
+  	margin-bottom: 2vh;
+  }
+
+  .nav-list {
+  	margin: 0 auto;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-bottom: 4vh;
+
+    .footer-invisible {
+	  display: none;
+	}
+
+	.nav-item {
+      @include medium {
+      	width: auto;
+      	float: left;
+      }
+
+      a {
+      	@include medium {
+      	  background: white;
+      	  padding: 0 1.25em;
+      	}
+      }
+	}
+  }
+
+  p {
+  	margin-top: 6vh;
+  	font-size: 12px;
+  }
+  
+}

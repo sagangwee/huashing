@@ -17,7 +17,11 @@ export function getHomeTestimonials() {
     content_type: "homeTestimonial"
   })
   .then( (entries) => {
-    console.log('got home testimonials');
-    dispatcher.dispatch({type: "RECEIVE_HOME_TESTIMONIALS", homeTestimonials: entries});
+    const testimonials = [];
+    const array = entries.items;
+    for (var index in array) {
+      testimonials.push(array[index].fields.testimonialText);
+    }
+    dispatcher.dispatch({type: "RECEIVE_HOME_TESTIMONIALS", homeTestimonials: testimonials});
   }); 
 }

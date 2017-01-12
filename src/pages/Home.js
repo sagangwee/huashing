@@ -16,6 +16,7 @@ export default class Home extends React.Component {
     };
     this.handleSlide = this.handleSlide.bind(this);
     this.renderItem = this.renderItem.bind(this);
+    this.getTestimonials = this.getTestimonials.bind(this);
   }
 
   componentWillMount() {
@@ -28,7 +29,7 @@ export default class Home extends React.Component {
 
   getTestimonials() {
     this.setState({
-      testimonials: HomeTestimonialStore.getAll(),
+      testimonials: HomeTestimonialStore.getAll()
     });
   }
 
@@ -93,8 +94,6 @@ export default class Home extends React.Component {
       }
     ]
 
-    const { testimonials } = this.state;
-
     return (
       <div>
         <ImageGallery
@@ -144,7 +143,7 @@ export default class Home extends React.Component {
 
         <section class="testimonials-section">
           <h1>What Patients Are Saying</h1>
-          <TestimonialCarousel testimonials={testimonials} currentIndex={0}/>
+          <TestimonialCarousel testimonials={this.state.testimonials} currentIndex={0}/>
         </section>
 
         <section class="appointment-section">

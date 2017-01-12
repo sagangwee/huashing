@@ -5,7 +5,8 @@ import dispatcher from "../dispatcher";
 class HomeTestimonialStore extends EventEmitter {
   constructor() {
     super()
-    this.todos = HomeTestimonialActions.getHomeTestimonials;
+    this.homeTestimonials = [];
+    HomeTestimonialActions.getHomeTestimonials();
   }
 
   getAll() {

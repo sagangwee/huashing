@@ -9,9 +9,9 @@ export default class Testimonial extends React.Component {
       <div class="testimonial">
         <p>
           <em>"{text}"</em>
-          <div class="reviewer">
+          <p class="reviewer">
             <strong>— { reviewer }</strong>
-          </div>
+          </p>
         </p>
       </div>
     );

@@ -7,7 +7,7 @@ import routes from './routes';
 // import NotFoundPage from './components/NotFoundPage';
 import nodemailer from 'nodemailer';
 import bodyParser from 'body-parser';
-import config from './config';
+// import config from './config';
 
 // initialize the server and configure support for ejs templates
 const app = Express();

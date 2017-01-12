@@ -65,8 +65,8 @@ function contact(req, res) {
     port: 465,
     secure: true, // use SSL
     auth: {
-        user: config.GMAIL_USERNAME,
-        pass: config.GMAIL_PASSWORD
+        user: process.env.GMAIL_USERNAME,
+        pass: process.env.GMAIL_PASSWORD
     }
   };
 

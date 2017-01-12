@@ -46,7 +46,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --content-base src/static --progress --inline --hot",
-    "windev": "node_modules\.bin\webpack-dev-server --content-base src/static --progress --inline --hot",
+    "windev": "node_modules/.bin/webpack-dev-server --content-base src/static --progress --inline --hot",
     "postinstall": "cross-env NODE_ENV=production node_modules/.bin/webpack -p --config ./webpack.production.config.js",
     "start": "cross-env NODE_ENV=production babel-node src/server.js"
   },

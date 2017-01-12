@@ -50,12 +50,17 @@ module.exports = {
     publicPath: "/js/",
     filename: "client.min.js"
   },
-  plugins: debug ? [] : [
+  plugins: debug ? [
+    new webpack.DefinePlugin({
+      'process.env':{
+        'CONTENTFUL_ACCESS_TOKEN': JSON.stringify(process.env.CONTENTFUL_ACCESS_TOKEN),
+        'CONTENTFUL_SPACE': JSON.stringify(process.env.CONTENTFUL_SPACE)
+      }
+    })
+  ] : [
     new webpack.DefinePlugin({
       'process.env':{
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        'CONTENTFUL_ACCESS_TOKEN': JSON.stringify(process.env.CONTENTFUL_ACCESS_TOKEN),
-        'CONTENTFUL_SPACE': JSON.stringify(process.env.CONTENTFUL_SPACE)
       }
     }),
     new webpack.optimize.DedupePlugin(),

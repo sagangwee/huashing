@@ -143,7 +143,7 @@ export default class Home extends React.Component {
 
         <section class="testimonials-section">
           <h1>What Patients Are Saying</h1>
-          <TestimonialCarousel testimonials={this.state.testimonials} currentIndex={0}/>
+          <TestimonialCarousel testimonials={this.state.testimonials} />
         </section>
 
         <section class="appointment-section">

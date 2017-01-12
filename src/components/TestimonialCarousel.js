@@ -4,7 +4,9 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 export default class TestimonialCarousel extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props;
+    this.state = {
+      currentIndex: 0
+    };
   }
 
   componentDidMount() {

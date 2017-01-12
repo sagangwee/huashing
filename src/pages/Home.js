@@ -3,16 +3,33 @@ import ImageGallery from 'react-image-gallery';
 import Button from "../components/Button";
 import { Link } from "react-router";
 import TestimonialCarousel from "../components/TestimonialCarousel";
+import * as HomeTestimonialActions from "../actions/HomeTestimonialActions";
+import HomeTestimonialStore from "../stores/HomeTestimonialStore";
 
 export default class Home extends React.Component {
   constructor() {
     super()
     this.state = {
       descriptionClasses: "fadeInLeft",
-      subheadingClasses: "subheading fadeInRight"
+      subheadingClasses: "subheading fadeInRight",
+      testimonials: HomeTestimonialStore.getAll()
     };
     this.handleSlide = this.handleSlide.bind(this);
     this.renderItem = this.renderItem.bind(this);
+  }
+
+  componentWillMount() {
+    TodoStore.on("change", this.getTodos);
+  }
+
+  componentWillUnmount() {
+    TodoStore.removeListener("change", this.getTodos);
+  }
+
+  getTestimonials() {
+    this.setState({
+      testimonials: HomeTestimonialStore.getAll(),
+    });
   }
 
   renderItem(item) {

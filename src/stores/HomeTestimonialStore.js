@@ -1,48 +1,21 @@
 import { EventEmitter } from "events";
-
+import * as HomeTestimonialActions from "../actions/HomeTestimonialActions";
 import dispatcher from "../dispatcher";
 
-class TodoStore extends EventEmitter {
+class HomeTestimonialStore extends EventEmitter {
   constructor() {
     super()
-    this.todos = [
-      {
-        id: 113464613,
-        text: "Go Shopping",
-        complete: false
-      },
-      {
-        id: 235684679,
-        text: "Pay Water Bill",
-        complete: false
-      },
-    ];
-  }
-
-  createTodo(text) {
-    const id = Date.now();
-
-    this.todos.push({
-      id,
-      text,
-      complete: false,
-    });
-
-    this.emit("change");
+    this.todos = HomeTestimonialActions.getHomeTestimonials;
   }
 
   getAll() {
-    return this.todos;
+    return this.homeTestimonials;
   }
 
   handleActions(action) {
     switch(action.type) {
-      case "CREATE_TODO": {
-        this.createTodo(action.text);
-        break;
-      }
-      case "RECEIVE_TODOS": {
-        this.todos = action.todos;
+      case "RECEIVE_HOME_TESTIMONIALS": {
+        this.homeTestimonials = action.homeTestimonials;
         this.emit("change");
         break;
       }
@@ -51,7 +24,7 @@ class TodoStore extends EventEmitter {
 
 }
 
-const todoStore = new TodoStore;
-dispatcher.register(todoStore.handleActions.bind(todoStore));
+const homeTestimonialStore = new HomeTestimonialStore;
+dispatcher.register(homeTestimonialStore.handleActions.bind(homeTestimonialStore));
 
-export default todoStore;
+export default homeTestimonialStore;

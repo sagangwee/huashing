@@ -246,6 +246,10 @@
   background: white;
   padding: 20vh 15vw;
   margin-bottom: 0;
+
+  @include medium {
+  	padding: 20vh 5vw;
+  }
 }
 
 #who {
@@ -300,31 +304,3 @@
 	    transform: translateY(0);
 	}
 }
-
-.example-enter {
-  opacity: 0.01;
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
-
-.example-appear {
-  opacity: 0.01;
-}
-
-.example-appear.example-appear-active {
-  opacity: 1;
-  transition: opacity .5s ease-in;
-}
-

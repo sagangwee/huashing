@@ -28,7 +28,7 @@ const SiteMap = function (props) {
         <Link to="testimonials" onClick={onClick}>Testimonials</Link>
       </li>
       <li class={"nav-item " + financesClass}>
-        <Link to="finances" onClick={onClick}>Pricing</Link>
+        <Link to="finances" onClick={onClick}>Prices</Link>
       </li>
       <li class={"nav-item " + contactClass}>
         <Link to="contact" onClick={onClick}>Contact</Link>

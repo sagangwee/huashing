@@ -53,8 +53,8 @@ module.exports = {
   plugins: debug ? [
     new webpack.DefinePlugin({
       'process.env':{
-        'CONTENTFUL_ACCESS_TOKEN': JSON.stringify(process.env.CONTENTFUL_ACCESS_TOKEN),
-        'CONTENTFUL_SPACE': JSON.stringify(process.env.CONTENTFUL_SPACE)
+        'CONTENTFUL_ACCESS_TOKEN': process.env.CONTENTFUL_ACCESS_TOKEN,
+        'CONTENTFUL_SPACE': process.env.CONTENTFUL_SPACE
       }
     })
   ] : [

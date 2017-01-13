@@ -47,9 +47,11 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'CONTENTFUL_ACCESS_TOKEN': process.env.CONTENTFUL_ACCESS_TOKEN,
-      'CONTENTFUL_SPACE': process.env.CONTENTFUL_SPACE
+      'process.env':{
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        'CONTENTFUL_ACCESS_TOKEN': process.env.CONTENTFUL_ACCESS_TOKEN,
+        'CONTENTFUL_SPACE': process.env.CONTENTFUL_SPACE
+      }
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),

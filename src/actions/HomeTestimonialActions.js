@@ -1,6 +1,5 @@
 import dispatcher from "../dispatcher";
 import contentful from "contentful";
-import config from "../config";
 
 export function getHomeTestimonials() {
   console.log("getHomeTestimonials action");

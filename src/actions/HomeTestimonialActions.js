@@ -2,6 +2,7 @@ import dispatcher from "../dispatcher";
 import contentful from "contentful";
 
 export function getHomeTestimonials() {
+  console.log("space id: ", process.env.CONTENTFUL_SPACE);
   console.log("access_token: ", process.env.CONTENTFUL_ACCESS_TOKEN);
   var client = contentful.createClient({
     // This is the space ID. A space is like a project folder in Contentful terms
@@ -12,13 +13,14 @@ export function getHomeTestimonials() {
 
   client.getEntries({
     content_type: "homeTestimonial"
-  })
-  .then( (entries) => {
+  }).then( (entries) => {
     const testimonials = [];
     const array = entries.items;
     for (var index in array) {
       testimonials.push(array[index].fields.testimonialText);
     }
     dispatcher.dispatch({type: "RECEIVE_HOME_TESTIMONIALS", homeTestimonials: testimonials});
+  }).catch( (error) => {
+     console.log("Promise Rejected: ", error);
   }); 
 }

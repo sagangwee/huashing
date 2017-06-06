@@ -2,8 +2,6 @@ import dispatcher from "../dispatcher";
 import contentful from "contentful";
 
 export function getHomeTestimonials() {
-  console.log("space id: ", process.env.CONTENTFUL_SPACE);
-  console.log("access_token: ", process.env.CONTENTFUL_ACCESS_TOKEN);
   var client = contentful.createClient({
     // This is the space ID. A space is like a project folder in Contentful terms
     space: process.env.CONTENTFUL_SPACE,

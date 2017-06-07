@@ -50,7 +50,7 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base src/static --progress --inline --hot",
     "windev": "node_modules/.bin/webpack-dev-server --content-base src/static --progress --inline --hot",
-    "heroku-postbuild": "NODE_ENV=production webpack -p --config ./webpack.production.config.js --progress",
+    "heroku-postbuild": "NODE_ENV=production webpack --display-error-details -p --config ./webpack.production.config.js --progress",
     "start": "cross-env NODE_ENV=production babel-node src/server.js"
   },
   "author": "",

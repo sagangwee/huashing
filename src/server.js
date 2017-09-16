@@ -8,9 +8,15 @@ import routes from './routes';
 import nodemailer from 'nodemailer';
 import bodyParser from 'body-parser';
 // import config from './config';
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
+const config = require('../webpack.production.config.js');
 
 // initialize the server and configure support for ejs templates
 const app = Express();
+
+var webpackCompiler = webpack(config);
 
 var isProduction = process.env.NODE_ENV === 'production';
 app.set('view engine', 'ejs');
@@ -20,6 +26,16 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(Express.static(path.join(__dirname, 'static')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+if (!isProduction) {
+  app.use(webpackDevMiddleware(webpackCompiler, {
+    publicPath: config.output.publicPath,
+    stats: {colors: true}
+  }));
+  app.use(webpackHotMiddleware(webpackCompiler, {
+    log: console.log
+  }));
+} 
 
 // universal routing and rendering
 app.get('*', (req, res) => {

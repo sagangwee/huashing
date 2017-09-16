@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "babel-preset-react-hmre": "^1.1.1",
+    "babel-register": "^6.26.0",
     "css-loader": "^0.26.1",
     "http-server": "^0.9.0",
     "node-sass": "^4.2.0",
@@ -49,10 +50,12 @@
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-hot-middleware": "^2.19.1"
   },
   "scripts": {
-    "dev": "webpack-dev-server --content-base src/static --progress --inline --hot",
+    "dev": "NODE_ENV=development babel-node src/server.js",
     "windev": "node_modules/.bin/webpack-dev-server --content-base src/static --progress --inline --hot",
     "heroku-postbuild": "NODE_ENV=production webpack --display-error-details -p --config ./webpack.production.config.js --progress",
     "start": "cross-env NODE_ENV=production babel-node src/server.js"

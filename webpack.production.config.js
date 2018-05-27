@@ -1,12 +1,13 @@
 var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   context: path.join(__dirname, "src"),
-  devtool: debug ? "inline-sourcemap" : null,
-  entry: "./client.js",
+  entry: './client.js',
   mode: 'production',
   module: {
     rules: [
@@ -24,7 +25,7 @@ module.exports = {
         test: /\.scss/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
+          'css-loader',
           'sass-loader',
         ],
         include: path.resolve(__dirname, 'src')
@@ -43,6 +44,16 @@ module.exports = {
     publicPath: "/js/",
     filename: "client.min.js"
   },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true // set to true if you want JS source maps
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ],
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env':{
@@ -51,9 +62,6 @@ module.exports = {
         'CONTENTFUL_SPACE': JSON.stringify(process.env.CONTENTFUL_SPACE)
       }
     }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-    new MiniCssExtractPlugin('../stylesheets/bundle.css')
+    new MiniCssExtractPlugin('../stylesheets/bundle.css'),
   ],
 };

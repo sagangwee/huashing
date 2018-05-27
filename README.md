@@ -9,25 +9,23 @@ npm install
 ```
 
 Then to run in development:
+
+Start Client
 ```
-npm run dev
+npm run dev-client
 ```
 
-If on Windows or if your WSL is acting funky and you have to switch to Bash/Cygwin for whatever reason:
+Start Server
 ```
-npm run windev
+npm run dev-server
 ```
 
 Then go to [localhost:8080](http://127.0.0.1:8080/)
 
 To run in production:
 ```
+npm run heroku-postbuild
 npm run start
 ```
 
-Then go to [localhost:3000](http://127.0.0.1:3000/)
-
-Adding the Express server messed up hot reloading, so will have to look into middleware for development. [This](https://blog.hellojs.org/setting-up-your-react-es6-development-environment-with-webpack-express-and-babel-e2a53994ade) looks promising.
-
-
-
+Then go to [localhost:8080](http://127.0.0.1:8080/)

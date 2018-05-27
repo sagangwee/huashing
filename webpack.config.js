@@ -13,24 +13,18 @@ module.exports = {
   context: path.join(__dirname, "src"),
   devtool: debug ? "inline-sourcemap" : null,
   entry: "./client.js",
+  mode: 'development',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel',
-        exclude: /.*node_modules((?!localModule).)*$/,
-        query: {
-          presets: ['es2015', 'react', 'react-hmre']
-        }
+        loader: 'babel-loader',
+        exclude: /.*node_modules((?!localModule).)*$/
       },
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: debug ? ['react', 'es2015', 'stage-0', 'react-hmre'] : ['react', 'es2015', 'stage-0'],
-          plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
-        }
+        loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
@@ -50,21 +44,27 @@ module.exports = {
     publicPath: "/js/",
     filename: "client.min.js"
   },
-  plugins: debug ? [
-    new webpack.DefinePlugin({
-      'process.env':{
-        'CONTENTFUL_ACCESS_TOKEN': process.env.CONTENTFUL_ACCESS_TOKEN,
-        'CONTENTFUL_SPACE': process.env.CONTENTFUL_SPACE
+  devServer: {
+    historyApiFallback: true,
+    hot: true,
+    inline: true,
+
+    host: 'localhost', // Defaults to `localhost`
+    port: 3000, // Defaults to 8080
+    proxy: {
+      '^/*': {
+        target: 'http://localhost:8080/',
+        secure: false
       }
-    })
-  ] : [
+    }
+  },
+  plugins: [
     new webpack.DefinePlugin({
-      'process.env':{
+      'process.env': {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        'CONTENTFUL_ACCESS_TOKEN': JSON.stringify(process.env.CONTENTFUL_ACCESS_TOKEN),
+        'CONTENTFUL_SPACE': JSON.stringify(process.env.CONTENTFUL_SPACE)
       }
     }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-  ],
+  ]
 };

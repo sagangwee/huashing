@@ -34,8 +34,6 @@ export default class TestimonialCarousel extends React.Component {
     const { testimonials } = this.props;
     const { currentIndex } = this.state;
     const testimonial = testimonials[currentIndex];
-    console.log("props", testimonials);
-    console.log(currentIndex);
 
     return (
       <div>

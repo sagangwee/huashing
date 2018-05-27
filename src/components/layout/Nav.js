@@ -19,11 +19,12 @@ export default class Nav extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll.bind(this));
+    console.log("add scroll listener");
+    window.addEventListener('scroll', this.handleScroll.bind(this), true);
   }
 
   componentWillUnmount() {
-      window.removeEventListener('scroll', this.handleScroll.bind(this));
+    window.removeEventListener('scroll', this.handleScroll.bind(this), true);
   }
 
   handleScroll(event) {
@@ -37,14 +38,15 @@ export default class Nav extends React.Component {
           fixed: false
         });
       }
+      console.log(scrollTop);
   }
 
   render() {
     const { location } = this.props;
-    const { 
+    const {
       collapsed,
       fixed,
-      navActive 
+      navActive
     } = this.state;
     const homeClass = location.pathname === "/" ? "active" : "";
     const aboutClass = location.pathname.match(/^\/about/) ? "active" : "";

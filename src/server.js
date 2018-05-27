@@ -12,9 +12,9 @@ import bodyParser from 'body-parser';
 // initialize the server and configure support for ejs templates
 const app = Express();
 
-var isProduction = process.env.NODE_ENV === 'production';
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+// var isProduction = process.env.NODE_ENV === 'production';
+// app.set('view engine', 'ejs');
+// app.set('views', path.join(__dirname, 'views'));
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'static')));
@@ -22,38 +22,53 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // universal routing and rendering
-app.get('*', (req, res) => {
-  match(
-    { routes, location: req.url },
-    (err, redirectLocation, renderProps) => {
+// app.get('*', (req, res) => {
+//   match(
+//     { routes, location: req.url },
+//     (err, redirectLocation, renderProps) => {
+//
+//       // in case of error display the error message
+//       if (err) {
+//         return res.status(500).send(err.message);
+//       }
+//
+//       // in case of redirect propagate the redirect to the browser
+//       if (redirectLocation) {
+//         return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+//       }
+//
+//       // generate the React markup for the current route
+//       let markup;
+//       if (renderProps) {
+//         // if the current route matched we have renderProps
+//         markup = renderToString(<RouterContext {...renderProps}/>);
+//       } else {
+//         // otherwise we can render a 404 page
+//         // markup = renderToString(<NotFoundPage/>);
+//         res.status(404);
+//       }
+//
+//       // render the index template with the embedded React markup
+//       return res.render('index', { markup });
+//     }
+//   );
+// });
 
-      // in case of error display the error message
-      if (err) {
-        return res.status(500).send(err.message);
-      }
+if (process.env.NODE_ENV !== 'production') {
+  const webpack = require('webpack');
+  const webpackDevMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
+  const config = require('../webpack.config.js');
+  const compiler = webpack(config);
 
-      // in case of redirect propagate the redirect to the browser
-      if (redirectLocation) {
-        return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-      }
+  app.use(webpackHotMiddleware(compiler));
+  app.use(webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath
+  }));
+}
 
-      // generate the React markup for the current route
-      let markup;
-      if (renderProps) {
-        // if the current route matched we have renderProps
-        markup = renderToString(<RouterContext {...renderProps}/>);
-      } else {
-        // otherwise we can render a 404 page
-        // markup = renderToString(<NotFoundPage/>);
-        res.status(404);
-      }
-
-      // render the index template with the embedded React markup
-      return res.render('index', { markup });
-    }
-  );
-});
-
+const indexPath = path.join(__dirname, 'static/index-client.html');
+app.get('*', (req, res) => res.sendFile(indexPath));
 app.post('/contact', contact);
 
 function contact(req, res) {
@@ -77,7 +92,7 @@ function contact(req, res) {
       from: data.email, // sender address
       to: 'huawang_usa@yahoo.com', // list of receivers
       subject: 'Huashing Acupuncture Contact Form', // Subject line
-      html: `<b>Name: </b> ${data.name} <br> 
+      html: `<b>Name: </b> ${data.name} <br>
              <b>Phone: </b> ${data.phone}
              <p>${data.message}</p>`
   }
@@ -93,7 +108,7 @@ function contact(req, res) {
 }
 
 // start the server
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const env = process.env.NODE_ENV || 'production';
 app.listen(port, err => {
   if (err) {

@@ -5,6 +5,9 @@ try {
   require('os').networkInterfaces = () => ({})
 }
 
+// For local process.env vars.
+const Dotenv = require('dotenv-webpack');
+
 var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
@@ -40,14 +43,16 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(__dirname, 'src', 'static', 'js'),
+    path: path.resolve(__dirname, 'src/static/js'),
     publicPath: "/js/",
     filename: "client.min.js"
   },
   devServer: {
+    contentBase: path.resolve(__dirname, 'src/static'),
     historyApiFallback: true,
     hot: true,
     inline: true,
+    watchContentBase: true,
 
     host: 'localhost', // Defaults to `localhost`
     port: 3000, // Defaults to 8080
@@ -66,5 +71,7 @@ module.exports = {
         'CONTENTFUL_SPACE': JSON.stringify(process.env.CONTENTFUL_SPACE)
       }
     }),
+    new webpack.HotModuleReplacementPlugin(),
+    new Dotenv(),
   ]
 };

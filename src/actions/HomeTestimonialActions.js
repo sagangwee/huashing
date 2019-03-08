@@ -20,5 +20,5 @@ export function getHomeTestimonials() {
     dispatcher.dispatch({type: "RECEIVE_HOME_TESTIMONIALS", homeTestimonials: testimonials});
   }).catch( (error) => {
      console.log("Promise Rejected: ", error);
-  }); 
+  });
 }

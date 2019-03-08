@@ -7,11 +7,11 @@ export default class Header extends React.Component {
         <div class="header-address">
           <div>
             <i class="fa fa-map-marker" aria-hidden="true"></i>
-            10630 N 71st PL, Suite 1 Scottsdale, Arizona 85254 
+            10630 N 71st PL Suite 1 Scottsdale, AZ 85254
           </div>
           <div>
             <i class="fa fa-map-marker" aria-hidden="true"></i>
-            4425E Agave Rd, Suite 106 Phoenix, Arizona 85044 
+            4025 W Chandler Blvd Suite 3, Chandler, AZ 85226
           </div>
         </div>
         <div class="header-title">

@@ -4,9 +4,8 @@
     "react"
   ],
   "plugins": [
-    "react-hot-loader/babel",
-    'react-html-attrs',
-    'transform-decorators-legacy',
+    "react-html-attrs",
+    "transform-decorators-legacy",
     "transform-class-properties"
   ]
 }
